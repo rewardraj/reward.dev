@@ -1,0 +1,29 @@
+.gridInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  .ServiceIcon {
+    min-height: 70px;
+    min-width: 70px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #70cf82;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+    border-radius: 8px;
+  }
+
+  .icon {
+    font-size: 2rem;
+    color: #fff;
+  }
+
+  .Service {
+    max-width: 500px;
+    text-align: left;
+    line-height: 1.8;
+    padding: 1rem;
+  }
+}

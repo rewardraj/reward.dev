@@ -1,0 +1,172 @@
+#header {
+  transition: all 0.5s ease;
+}
+
+.headerText {
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-primary-light);
+  }
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
+.primaryMenu {
+  height: 100%;
+  position: fixed;
+  width: 260px;
+  z-index: 2;
+  background-color: #131313;
+}
+
+.hamburger {
+  display: none;
+}
+
+.navContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 1rem 2rem;
+  height: 100%;
+}
+
+.socialButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.iconBtn {
+  font-size: 28px;
+  color: #f2f2f2;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-primary-light);
+  }
+}
+.navImageSpan {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 50%;
+  margin-bottom: 24px;
+  background-color: #343a40;
+}
+
+.navImage {
+  display: block;
+  width: 200px;
+  height: 180px;
+  border-radius: 50%;
+}
+.navTitle {
+  color: aliceblue;
+  text-decoration: none;
+  text-align: center;
+}
+
+.headerTextMobile {
+  display: none;
+}
+
+.navLink {
+  display: block;
+  color: #f2f2f2;
+  text-decoration: none;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 18px;
+
+  &:hover {
+    color: var(--color-primary-light);
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .navLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .primaryMenu {
+    height: 60px;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+
+  .navContainer {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    width: 100%;
+  }
+
+  .navTitle {
+    display: none;
+  }
+  .socialButtons {
+    display: flex;
+    order: 2;
+    max-width: 145px;
+  }
+
+  .headerTextMobile {
+    display: block;
+    order: 1;
+
+    width: 100%;
+    font-size: 1.5rem;
+    color: #f2f2f2;
+  }
+
+  .navLinks {
+    position: absolute;
+    top: 100%;
+    left: 55%;
+    flex-direction: column;
+    background-color: #131313;
+    width: 50%;
+    display: none;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  .showMobileMenu {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    order: 3;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-bottom: -4px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #70cf82;
+    }
+  }
+}

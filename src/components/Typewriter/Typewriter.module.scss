@@ -1,0 +1,23 @@
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.typeEffect {
+  color: #4831d4;
+  padding-top: 0.4rem;
+  font-size: 1.8rem;
+
+  .blink {
+    color: #fff;
+    animation: blink 1s infinite;
+  }
+}
+
+.typed {
+  font-size: clamp(1.5rem, 4vw, 8rem);
+}

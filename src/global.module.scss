@@ -1,0 +1,225 @@
+:root {
+  /* BREAKPOINTS */
+  --breakpoint-mobile: 40rem;
+  --breakpoint-tablet: 60rem;
+
+  /* NAV HEADER HEIGHT */
+  --nav-header-height: 10rem;
+
+  /* BORDER RADIUS */
+  --border-radius-small: 0.5rem;
+  --border-radius-large: 1rem;
+
+  /* SECTION MARGIN - LEFT, RIGHT */
+  --section-margin-horizontal-desktop: 8rem;
+  --section-margin-horizontal-tablet: 4rem;
+  --section-margin-horizontal-mobile: 4rem;
+  --section-margin-horizontal: var(--section-margin-horizontal-desktop);
+  --section-margin-top: 90px;
+
+  /* SECTION MARGIN - TOP, BOTTOM */
+  --section-margin-vertical-desktop: 10rem;
+  --section-margin-vertical-tablet: 5rem;
+  --section-margin-vertical-mobile: 5rem;
+  --section-margin-vertical: var(--section-margin-vertical-desktop);
+
+  /* GAP */
+  --gap-grid: 4rem;
+
+  /* COLORS - THEME */
+  --bg-primary: #f6fbf7;
+  --bg-primary-light: #f5fbf9;
+  --bg-primary-tertiary: #f3fef8;
+  --bg-secondary: #e7fafe;
+  --color-primary: #50b58b;
+  --logo-text: #199d6e;
+  --color-primary-light: #70cf82;
+  --color-primary-dark: #569249;
+  --color-primary-yellow: #ffd500;
+
+  --btn-primary: #8a6be2;
+  --btn-primary-light: #0dbd7a;
+
+  --color-secondary: #2a3c3b;
+  --color-secondary-light: #34514f;
+  --color-secondary-dark: #233332;
+
+  --color-primary-white: #f9f9f9;
+  --color-secondary-white: #cecece;
+
+  --color-primary-black: #2c3533;
+
+  --color-secondary-yellow: #dfdf7c;
+
+  --color-error: #b14848;
+  --color-error-light: #bb5858;
+  --color-error-dark: #9f4141;
+
+  --color-disabled: #888888;
+  --color-disabled-dark: #4b4b4b;
+
+  --color-focus-outline: var(--color-secondary-yellow);
+  --color-warning: var(--color-secondary-yellow);
+
+  /* COLORS - BACKGROUND */
+  --color-background: #081112;
+  --color-background-light: #182224;
+  --color-background-dark: #060e0e;
+  --color-highlights: #172b29;
+
+  /* COLORS - TEXT */
+  --color-text-primary: var(--color-primary-white);
+  --color-text-secondary: var(--color-secondary-white);
+  --color-text-disabled: var(--color-secondary-white);
+  --color-text-dark: var(--color-primary-black);
+  --color-text-highlight: var(--color-primary);
+  --color-text-tertiary: #6c7a79;
+  --color-text-placeholder: #589d97;
+  --color-warning: var(--color-secondary-yellow);
+
+  /* CARDS */
+  --card-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --card-shadow-secondary: #f6f6f6;
+
+  /* FONT - SIZE */
+  --font-size-h1: 9rem;
+  --font-size-h2: 7.5rem;
+  --font-size-h3: 6.5rem;
+  --font-size-h4: 5rem;
+  --font-size-h5: 4rem;
+  --font-size-p-xlarge: 4rem;
+  --font-size-p-large: 3rem;
+  --font-size-p-mid: 2.5rem;
+  --font-size-p-small: 2rem;
+  --font-size-p-xsmall: 1.5rem;
+
+  /* FONT - WEIGHT */
+  --font-weight-light: 200;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* OUTLINE STYLE */
+  --outline-style-focus: 1px var(--color-focus-outline) solid;
+
+  /* BORDER STYLE */
+  --border-style-secondary: 1px var(--color-primary) solid;
+  --border-style-secondary: 1px var(--color-secondary) solid;
+}
+
+html {
+  font-size: 16px;
+  line-height: normal;
+  font-family: "aileron", sans-serif;
+}
+
+body {
+  min-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+i {
+  font-style: normal;
+}
+
+* {
+  /* stops ability to select text unless specified */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  user-select: none;
+  max-width: 100%;
+  /* stops blue box on touch event elements */
+  -webkit-tap-highlight-color: transparent;
+  -moz-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+p,
+input,
+textarea {
+  -webkit-user-select: text; /* Chrome/Safari/Opera */
+  user-select: text;
+  cursor: text;
+}
+
+/* SCROLLBAR */
+
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--color-primary) var(--color-secondary-light);
+  scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+}
+
+*::-webkit-scrollbar-track:vertical {
+  border: 1px solid var(--color-secondary-dark);
+  border-left: 1px solid var(--color-secondary-dark);
+  background-color: var(--color-secondary-light);
+}
+
+*::-webkit-scrollbar-track:horizontal {
+  border-top: 1px solid var(--color-secondary-dark);
+  border-bottom: 1px solid var(--color-secondary-dark);
+  background-color: var(--color-secondary-light);
+}
+
+*::-webkit-scrollbar-thumb {
+  border: 4px solid transparent;
+  border-radius: 8px;
+  background-color: var(--color-primary);
+  background-clip: content-box;
+  transition: background-color 2s ease-in-out;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: var(--color-primary-dark);
+}
+
+*::-webkit-scrollbar-corner {
+  background-color: var(--color-secondary-light);
+  border-bottom: 1px solid var(--color-secondary-dark);
+  border-right: 1px solid var(--color-secondary-dark);
+}
+
+textarea {
+  resize: none;
+}
+
+@media (max-width: 60rem) {
+  :root {
+    --section-margin-horizontal: var(--section-margin-horizontal-tablet);
+    --section-margin-vertical: var(--section-margin-vertical-tablet);
+  }
+}
+
+@media (max-width: 30rem) {
+  :root {
+    --section-margin-horizontal: var(--section-margin-horizontal-mobile);
+    --section-margin-vertical: var(--section-margin-vertical-mobile);
+  }
+}
+
+// .MainLayout {
+//   margin: 0 auto;
+//   box-sizing: border-box;
+//   max-width: 100%;
+// }
+
+@media screen and (max-width: 768px) {
+  .MainLayout {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .primaryMenu {
+    display: none;
+  }
+}
