@@ -131,13 +131,18 @@
     max-width: 145px;
   }
 
-  .headerTextMobile {
+  .headerTextMobile,
+  .navLinkMobile {
     display: block;
     order: 1;
-
+    cursor: pointer;
     width: 100%;
     font-size: 1.5rem;
     color: #f2f2f2;
+
+    &:hover {
+      color: var(--color-primary-light);
+    }
   }
 
   .navLinks {

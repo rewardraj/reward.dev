@@ -25,7 +25,16 @@ const Navbar = () => {
             </span>
             <h1 className={styles.headerText}>Reward Joseph</h1>
           </Link>
-          <span className={styles.headerTextMobile}>Reward Joseph</span>
+          <span className={styles.headerTextMobile}>
+            <Link
+              to="hero"
+              smooth={true}
+              duration={1}
+              className={styles.navLinkMobile}
+            >
+              Reward Joseph
+            </Link>
+          </span>
           <div className={styles.hamburger} onClick={toggleMobileMenu}>
             <FaBars />
           </div>
