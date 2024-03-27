@@ -2,12 +2,13 @@
   margin: 0 auto;
   max-width: 1500px;
   padding: 3rem;
+  margin-bottom: 2rem;
 
   @media screen and (max-width: 768px) {
-    padding: 0 3rem;
+    padding: 1rem;
   }
 
   @media screen and (max-width: 992px) {
-    padding: 0 3rem;
+    padding: 1rem;
   }
 }

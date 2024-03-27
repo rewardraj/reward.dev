@@ -106,22 +106,22 @@ export const AllProjects = () => {
           .map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}
-      </div>
-      <div className={styles.moreBtn}>
-        <button
-          className={styles.button}
-          onClick={showPrevious}
-          disabled={currentProject === 0}
-        >
-          <FaChevronLeft />
-        </button>
-        <button
-          className={styles.button}
-          onClick={showNext}
-          disabled={currentProject === allProjects.length - 3}
-        >
-          <FaChevronRight />
-        </button>
+        <div className={styles.moreBtn}>
+          <button
+            className={styles.button}
+            onClick={showPrevious}
+            disabled={currentProject === 0}
+          >
+            <FaChevronLeft />
+          </button>
+          <button
+            className={styles.button}
+            onClick={showNext}
+            disabled={currentProject === allProjects.length - 3}
+          >
+            <FaChevronRight />
+          </button>
+        </div>
       </div>
     </>
   );

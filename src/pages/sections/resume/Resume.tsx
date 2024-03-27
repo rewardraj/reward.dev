@@ -10,8 +10,8 @@ import { FaDownload } from "react-icons/fa6";
 const Resume = () => {
   return (
     <section id="resume" className={styles.main}>
-      <Header title="Summary" subtitle="Resume" />
       <Container>
+        <Header title="Summary" subtitle="Resume" />
         <Grid desktopColumns={2}>
           <div>
             <h2 className={styles.heading}>Education</h2>
