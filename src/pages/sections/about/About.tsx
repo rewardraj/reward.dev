@@ -1,9 +1,6 @@
 import ButtonDefault from "../../../components/Button/Button";
 import Header from "../../../components/Header/Header";
-import {
-  Featured,
-  ProfileDetail,
-} from "../../../components/ProfileDetail/ProfileDetail";
+import { Featured } from "../../../components/ProfileDetail/ProfileDetail";
 import styles from "./About.module.scss";
 import { Container } from "../../../components/Layout/Container/Container";
 import Grid from "../../../components/Layout/Grid/Grid";
