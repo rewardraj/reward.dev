@@ -1,0 +1,41 @@
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Desktop columns */
+.desktop-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+.desktop-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.desktop-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.desktop-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+/* Add more as needed */
+
+/* Tablet columns */
+@media screen and (max-width: 992px) {
+  .tablet-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .tablet-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* Add more as needed */
+}
+
+/* Mobile columns */
+@media screen and (max-width: 768px) {
+  .mobile-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .mobile-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* Add more as needed */
+}

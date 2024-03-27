@@ -2,46 +2,6 @@
   max-height: 100%;
 }
 
-.Container {
-  margin: 3rem auto;
-  max-width: 1500px;
-  padding-bottom: 5rem;
-}
-
-@media screen and (min-width: 768px) {
-  .Container {
-    padding-left: 3rem !important;
-    padding-right: 3rem !important;
-  }
-}
-
-.row {
-  margin: auto;
-  max-width: 100%;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 2rem;
-
-  & > * {
-    grid-column-end: span 12;
-  }
-
-  @media (min-width: 576px) {
-    & > * {
-      grid-column-end: span 12;
-    }
-  }
-
-  @media (min-width: 992px) {
-    & > * {
-      grid-column-end: span 6;
-    }
-    & > .Column {
-      width: 800px;
-    }
-  }
-}
-
 .Column,
 .detailsList {
   padding: 1rem;
@@ -80,27 +40,18 @@
   }
 }
 
-@media screen and (max-width: 1338px) {
-  .AboutMe {
-    padding: 0 1rem;
-  }
-  .list {
-    width: 600px;
-    align-self: flex-start;
-    padding: 0 1rem;
-  }
-}
-
-.gridInfo {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 2rem;
-  margin: 3rem;
-}
-
 .gridInner {
+  margin-top: 3rem;
   padding: 20px;
   position: relative;
+
+  @media screen and (max-width: 992px) {
+    margin-top: 0;
+    margin: 0;
+  }
+  @media screen and (max-width: 768px) {
+    margin-top: 0;
+  }
 }
 
 .emailLink {

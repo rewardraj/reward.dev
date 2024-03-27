@@ -77,13 +77,21 @@ const Navbar = () => {
             </Link>
           </div>
           <div className={styles.socialButtons}>
-            <NavLink to="/" className={styles.socialButton}>
+            <NavLink
+              to="https://www.linkedin.com/in/rewardraj"
+              target="_blank"
+              className={styles.socialButton}
+            >
               <FaLinkedin className={styles.iconBtn} />
             </NavLink>
-            <NavLink to="/" className={styles.socialButton}>
+            <NavLink to="#" className={styles.socialButton}>
               <FaFacebook className={styles.iconBtn} />
             </NavLink>
-            <NavLink to="/" className={styles.socialButton}>
+            <NavLink
+              to="https://github.com/rewardraj"
+              target="_blank"
+              className={styles.socialButton}
+            >
               <FaGithub className={styles.iconBtn} />
             </NavLink>
           </div>

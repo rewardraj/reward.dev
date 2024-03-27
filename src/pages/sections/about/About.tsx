@@ -5,14 +5,16 @@ import {
   ProfileDetail,
 } from "../../../components/ProfileDetail/ProfileDetail";
 import styles from "./About.module.scss";
+import { Container } from "../../../components/Layout/Container/Container";
+import Grid from "../../../components/Layout/Grid/Grid";
 
 const About = () => {
   return (
     <section id="about" className={styles.main}>
-      <div className={styles.Container}>
+      <Container>
         <Header title="About Me" subtitle="Know Me More" />
-        <div className={styles.row}>
-          <div className={styles.Column}>
+        <Grid desktopColumns={2} tabletColumns={2} mobileColumns={1}>
+          <div>
             <div className={styles.AboutMe}>
               <p>
                 My name is <span>Reward Edoyugbo</span> a full stack developer.
@@ -56,8 +58,8 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className={styles.gridInfo}>
+        </Grid>
+        <Grid desktopColumns={4} tabletColumns={2} mobileColumns={2}>
           <div className={styles.gridInner}>
             <Featured number="10+" description="Years Experience" />
           </div>
@@ -70,8 +72,8 @@ const About = () => {
           <div className={styles.gridInner}>
             <Featured number="38+" description="Awards Received" />
           </div>
-        </div>
-      </div>
+        </Grid>
+      </Container>
     </section>
   );
 };
