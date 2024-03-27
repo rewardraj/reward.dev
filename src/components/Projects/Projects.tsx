@@ -102,7 +102,7 @@ export const AllProjects = () => {
   };
   return (
     <Container>
-      <Grid desktopColumns={3} tabletColumns={2} mobileColumns={1}>
+      <Grid desktopColumns={3} tabletColumns={2}>
         {allProjects
           .slice(currentProject, currentProject + 4)
           .map((project, index) => (
@@ -131,7 +131,7 @@ export const AllProjects = () => {
 
 export const ReactProjects = () => (
   <Container>
-    <Grid desktopColumns={3} tabletColumns={2} mobileColumns={2}>
+    <Grid desktopColumns={3} tabletColumns={2}>
       {reactProjects.map((project, index) => (
         <ProjectCard key={index} {...project} />
       ))}
@@ -141,7 +141,7 @@ export const ReactProjects = () => (
 
 export const SvelteProjects = () => (
   <Container>
-    <Grid desktopColumns={3} tabletColumns={2} mobileColumns={2}>
+    <Grid desktopColumns={3} tabletColumns={2}>
       {svelteProjects.map((project, index) => (
         <ProjectCard key={index} {...project} />
       ))}
