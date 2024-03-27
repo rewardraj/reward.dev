@@ -12,8 +12,8 @@ const About = () => {
   return (
     <section id="about" className={styles.main}>
       <Container>
-        <Header title="About Me" subtitle="Know Me More" />
-        <Grid desktopColumns={2} tabletColumns={2} mobileColumns={1}>
+        <Header title="About Me" />
+        <Grid desktopColumns={1} mobileColumns={1}>
           <div>
             <div className={styles.AboutMe}>
               <p>
@@ -32,30 +32,8 @@ const About = () => {
                 projects and collaborate with other developers.
               </p>
             </div>
-          </div>
-          <div>
-            <div className={styles.detailsList}>
-              <div className={styles.list}>
-                <div className={styles.ProfileDetail}>
-                  <ProfileDetail label="Name" value="Reward Joseph" />
-                  <ProfileDetail label="Age" value="28" />
-                  <ProfileDetail label="Location" value="Lublin, Poland" />
-                  <ProfileDetail
-                    label="Email"
-                    value={
-                      <a
-                        href="mailto:rewardraj@gmail.com"
-                        className={styles.emailLink}
-                      >
-                        rewardraj@gmail.com
-                      </a>
-                    }
-                  />
-                </div>
-              </div>
-              <div className={styles.cvBtn}>
-                <ButtonDefault variant="primary">Download CV</ButtonDefault>
-              </div>
+            <div className={styles.cvBtn}>
+              <ButtonDefault variant="primary">Download CV</ButtonDefault>
             </div>
           </div>
         </Grid>

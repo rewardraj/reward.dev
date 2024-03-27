@@ -3,7 +3,7 @@ import styles from "./Header.module.scss";
 
 interface HeaderProps {
   title: string;
-  subtitle: string;
+  subtitle?: string;
 }
 
 const Header: React.FC<HeaderProps> = ({ title, subtitle }) => {
@@ -12,7 +12,7 @@ const Header: React.FC<HeaderProps> = ({ title, subtitle }) => {
       <h2 className={styles.maskedText}>{title}</h2>
       <p className={styles.subtitle}>
         {subtitle}
-        <span className={styles.separator}></span>
+        {/* <span className={styles.separator}></span> */}
       </p>
     </div>
   );

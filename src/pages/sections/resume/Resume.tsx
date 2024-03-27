@@ -11,7 +11,7 @@ const Resume = () => {
   return (
     <section id="resume" className={styles.main}>
       <Container>
-        <Header title="Summary" subtitle="Resume" />
+        <Header title="Summary" />
         <Grid desktopColumns={2} tabletColumns={2} mobileColumns={1}>
           <div>
             <h2 className={styles.heading}>Education</h2>

@@ -9,16 +9,16 @@
 
 .maskedText {
   opacity: 0.4;
-  color: #dee3e4 !important;
+  color: #727373 !important;
   font-weight: 600;
-  font-size: clamp(2rem, 5vw, 4rem); // Adjusted values
+  font-size: clamp(2rem, 5vw, 4rem);
   text-transform: uppercase;
 }
 
 .subtitle {
   color: rgb(33, 37, 41);
   font-weight: 600;
-  font-size: clamp(1rem, 2.5vw, 1.5rem); // Adjusted values
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
   position: absolute;
   text-align: center;
   width: 100%;

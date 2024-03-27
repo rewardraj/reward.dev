@@ -6,7 +6,7 @@ import styles from "./Contact.module.scss";
 const Contact = () => {
   return (
     <section id="contact" className={styles.contact}>
-      <Header title="Contact" subtitle="Get in touch" />
+      <Header title="Contact" />
       <Container>
         <div className={styles.formContainer}>
           <form action="" className={styles.form}>

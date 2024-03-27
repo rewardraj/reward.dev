@@ -9,7 +9,7 @@ const Services = () => {
   return (
     <section id="services" className={styles.main}>
       <Container>
-        <Header title="Services" subtitle="What I can do for you" />
+        <Header title="Services" />
         <Grid desktopColumns={2} tabletColumns={2}>
           {services.map((service, index) => (
             <Service

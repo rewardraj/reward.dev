@@ -13,7 +13,7 @@ const Portfolio = () => {
 
   return (
     <section id="portfolio" className={styles.main}>
-      <Header title="Portfolio" subtitle="My Projects" />
+      <Header title="Portfolio" />
       <div>
         <Tabs
           className={styles.Tabs}
