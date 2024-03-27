@@ -102,7 +102,7 @@ export const AllProjects = () => {
   };
   return (
     <Container>
-      <Grid desktopColumns={3} tabletColumns={2} mobileColumns={2}>
+      <Grid desktopColumns={3} tabletColumns={2} mobileColumns={1}>
         {allProjects
           .slice(currentProject, currentProject + 4)
           .map((project, index) => (
