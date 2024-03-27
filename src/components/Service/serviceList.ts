@@ -13,7 +13,7 @@ export const services = [
     IconComponent: FaMobile,
     title: "Mobile Development",
     description:
-      "I can build a mobile application using React Native and Expo.",
+      "I can build a mobile application using React Native and Expo for both iOS and Android.",
   },
   {
     IconComponent: FaPalette,

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./Projects.module.scss";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import Grid from "../Layout/Grid/Grid";
+import { Container } from "../Layout/Container/Container";
 
 interface ProjectProps {
   title: string;
@@ -99,46 +101,50 @@ export const AllProjects = () => {
     );
   };
   return (
-    <>
-      <div className={styles.projectContainer}>
+    <Container>
+      <Grid desktopColumns={3} tabletColumns={2} mobileColumns={2}>
         {allProjects
-          .slice(currentProject, currentProject + 3)
+          .slice(currentProject, currentProject + 4)
           .map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}
-        <div className={styles.moreBtn}>
-          <button
-            className={styles.button}
-            onClick={showPrevious}
-            disabled={currentProject === 0}
-          >
-            <FaChevronLeft />
-          </button>
-          <button
-            className={styles.button}
-            onClick={showNext}
-            disabled={currentProject === allProjects.length - 3}
-          >
-            <FaChevronRight />
-          </button>
-        </div>
+      </Grid>
+      <div className={styles.moreBtn}>
+        <button
+          className={styles.button}
+          onClick={showPrevious}
+          disabled={currentProject === 0}
+        >
+          <FaChevronLeft />
+        </button>
+        <button
+          className={styles.button}
+          onClick={showNext}
+          disabled={currentProject === allProjects.length - 3}
+        >
+          <FaChevronRight />
+        </button>
       </div>
-    </>
+    </Container>
   );
 };
 
 export const ReactProjects = () => (
-  <div className={styles.projectContainer}>
-    {reactProjects.map((project, index) => (
-      <ProjectCard key={index} {...project} />
-    ))}
-  </div>
+  <Container>
+    <Grid desktopColumns={3} tabletColumns={2} mobileColumns={2}>
+      {reactProjects.map((project, index) => (
+        <ProjectCard key={index} {...project} />
+      ))}
+    </Grid>
+  </Container>
 );
 
 export const SvelteProjects = () => (
-  <div className={styles.projectContainer}>
-    {svelteProjects.map((project, index) => (
-      <ProjectCard key={index} {...project} />
-    ))}
-  </div>
+  <Container>
+    <Grid desktopColumns={3} tabletColumns={2} mobileColumns={2}>
+      {svelteProjects.map((project, index) => (
+        <ProjectCard key={index} {...project} />
+      ))}
+    </Grid>
+  </Container>
 );

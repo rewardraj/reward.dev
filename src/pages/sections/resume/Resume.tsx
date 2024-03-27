@@ -12,7 +12,7 @@ const Resume = () => {
     <section id="resume" className={styles.main}>
       <Container>
         <Header title="Summary" subtitle="Resume" />
-        <Grid desktopColumns={2}>
+        <Grid desktopColumns={2} tabletColumns={2} mobileColumns={1}>
           <div>
             <h2 className={styles.heading}>Education</h2>
             {educations.map((education, index) => (

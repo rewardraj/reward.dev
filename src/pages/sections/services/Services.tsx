@@ -10,7 +10,7 @@ const Services = () => {
     <section id="services" className={styles.main}>
       <Container>
         <Header title="Services" subtitle="What I can do for you" />
-        <Grid desktopColumns={2}>
+        <Grid desktopColumns={2} tabletColumns={2}>
           {services.map((service, index) => (
             <Service
               key={index}
