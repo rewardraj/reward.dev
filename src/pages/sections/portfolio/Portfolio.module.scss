@@ -1,0 +1,87 @@
+.row {
+  margin: auto;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+
+  & > * {
+    grid-column-end: span 12;
+  }
+
+  @media (min-width: 576px) {
+    & > * {
+      grid-column-end: span 12;
+    }
+  }
+
+  @media (min-width: 992px) {
+    & > * {
+      grid-column-end: span 6;
+    }
+    & > .Column {
+      width: 800px;
+    }
+  }
+}
+.main {
+  max-height: 100%;
+}
+
+.Container {
+  max-width: 1500px;
+  padding-bottom: 5rem;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .Container {
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
+}
+
+.grid {
+  margin: 0 auto;
+}
+
+.TabList {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  border: none;
+  margin-bottom: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.Tab {
+  position: relative;
+  padding: 1rem;
+  cursor: pointer;
+  outline: none;
+  background: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--color-primary-light);
+  }
+
+  &.selected {
+    color: var(--color-primary-light);
+    border: none;
+
+    &:after {
+      background-color: #20c997;
+      bottom: -2px;
+      content: " ";
+      display: block;
+      height: 2px;
+      left: 0;
+      position: absolute;
+      -webkit-transform: translateY(-3px);
+      transform: translateY(-3px);
+      width: 100%;
+    }
+  }
+}

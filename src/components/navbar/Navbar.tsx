@@ -51,14 +51,6 @@ const Navbar = () => {
               Services
             </Link>
             <Link
-              to="resume"
-              smooth={true}
-              duration={1}
-              className={styles.navLink}
-            >
-              Resume
-            </Link>
-            <Link
               to="portfolio"
               smooth={true}
               duration={1}
@@ -66,6 +58,15 @@ const Navbar = () => {
             >
               Portfolio
             </Link>
+            <Link
+              to="resume"
+              smooth={true}
+              duration={1}
+              className={styles.navLink}
+            >
+              Resume
+            </Link>
+
             <Link
               to="contact"
               smooth={true}

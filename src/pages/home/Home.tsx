@@ -1,6 +1,7 @@
 import Navbar from "../../components/navbar/Navbar";
 import About from "../sections/about/About";
 import Hero from "../sections/hero/Hero";
+import Portfolio from "../sections/portfolio/Portfolio";
 import Services from "../sections/services/Services";
 import styles from "./Home.module.scss";
 
@@ -14,6 +15,7 @@ const Home = () => {
         <Hero />
         <About />
         <Services />
+        <Portfolio />
       </div>
     </div>
   );
