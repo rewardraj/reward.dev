@@ -84,7 +84,7 @@
   color: #f2f2f2;
   text-decoration: none;
   padding: 10px;
-  text-align: right;
+  text-align: center;
   width: 100%;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -154,6 +154,22 @@
     display: none;
     cursor: pointer;
     z-index: 3;
+  }
+
+  .navLink {
+    display: block;
+    color: #f2f2f2;
+    text-decoration: none;
+    padding: 10px;
+    text-align: right;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 18px;
+
+    &:hover {
+      color: var(--color-primary-light);
+    }
   }
 
   .showMobileMenu {

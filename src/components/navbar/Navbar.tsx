@@ -1,6 +1,6 @@
 import styles from "./Navbar.module.scss";
 import { NavLink } from "react-router-dom";
-import { FaBars, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaBars, FaGithub, FaLinkedin } from "react-icons/fa";
 import { useState } from "react";
 import { Link } from "react-scroll";
 
