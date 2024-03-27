@@ -93,9 +93,7 @@ const Navbar = () => {
             >
               <FaLinkedin className={styles.iconBtn} />
             </NavLink>
-            <NavLink to="#" className={styles.socialButton}>
-              <FaFacebook className={styles.iconBtn} />
-            </NavLink>
+
             <NavLink
               to="https://github.com/rewardraj"
               target="_blank"
