@@ -27,8 +27,8 @@ const Navbar = () => {
             <span className={styles.navImageSpan}>
               <img
                 className={styles.navImage}
-                src="https://picsum.photos/200/300"
-                alt=""
+                src="/src/assets/1.png"
+                alt="Rewards hero image"
               />
             </span>
             <h1 className={styles.headerText}>Reward Joseph</h1>

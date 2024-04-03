@@ -31,30 +31,29 @@ const Contact = () => {
                 className={`${styles.input} ${styles.inputField}`}
               />
             </Grid>
-            <Grid desktopColumns={2} gridGap="20px">
+            <Grid desktopColumns={1} gridGap="20px">
               <Dropdown
-                title="What are you interested in?"
+                title="Subject"
                 options={[
-                  "Web Design",
-                  "Mobile App Development",
-                  "UI/UX Design",
-                  "Branding",
-                  "SEO Services",
+                  "General Inquiry",
+                  "Project Collaboration",
+                  "Job Opportunity",
+                  "Feedback",
                   "Other",
                 ]}
                 isOpen={openDropdown === "dropdown1"}
                 onToggle={() => handleToggle("dropdown1")}
               />
-              <Dropdown
+              {/* <Dropdown
                 title="What is your budget?"
                 options={["$500", "$1000", "$2000", "$5000+"]}
                 isOpen={openDropdown === "dropdown2"}
                 onToggle={() => handleToggle("dropdown2")}
-              />
+              /> */}
             </Grid>
             <Grid desktopColumns={1}>
               <textarea
-                placeholder="Tell me about your project..."
+                placeholder="Tell me more..."
                 rows={5}
                 className={`${styles.textarea} ${styles.inputField}`}
               ></textarea>

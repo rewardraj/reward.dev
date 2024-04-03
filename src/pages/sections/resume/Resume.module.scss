@@ -21,7 +21,6 @@
     border: 1px solid var(--color-primary-light);
     display: flex;
     align-items: center;
-    outline: none;
     gap: 0.5rem;
     border-radius: 50px;
     cursor: pointer;
@@ -30,6 +29,7 @@
     span {
       font-size: 16px;
       font-weight: 500;
+      outline: none;
     }
 
     &:hover {

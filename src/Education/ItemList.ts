@@ -1,9 +1,9 @@
 export const educations = [
     {
-      period: 'Graduated: 2025',
+      period: '2022 - Present',
       course: 'Bachelor of Science in Computer Science',
       school: 'University of Economics and Innovation',
-      description: 'Majored in computer science, learnt algorithms, data structures, and software engineering.'
+      description: 'Majoring in computer science, feeding on algorithms, data structures, and software engineering.'
     },
   ];
 
@@ -25,7 +25,7 @@ export const educations = [
       period: 'May 2014 - May 2016',
       course: 'Senior Digital App Operator',
       school: 'Transsion Holdings',
-      description: 'Managed a team of operators to maintain digital applications and the company after-sales platform.'
+      description: 'Collaborated with a team of digital operators to maintain software applications and troubleshoot issues.'
     },
   
   ];

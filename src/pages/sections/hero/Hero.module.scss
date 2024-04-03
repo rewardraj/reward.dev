@@ -28,6 +28,10 @@
   background-size: cover;
   transition: background-image 0.3s ease-in 2s;
   z-index: 0;
+
+  @media screen and (max-width: 768px) {
+    background-attachment: scroll;
+  }
 }
 
 .heroContent {
