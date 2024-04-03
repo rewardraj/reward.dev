@@ -64,11 +64,15 @@
 
 .scrollArrow {
   position: absolute;
-  bottom: 70px;
+  bottom: 20px;
   left: 50%;
   z-index: 999;
   transform: translateX(-50%);
   animation: bounce 2s infinite;
+
+  @media screen and (max-width: 768px) {
+    bottom: 20%;
+  }
 }
 .scrollArrow svg {
   font-size: 2rem;
