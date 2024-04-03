@@ -3,10 +3,11 @@ import Button from "../../../components/Button/Button";
 import styles from "./Hero.module.scss";
 import Typewriter from "../../../components/Typewriter/Typewriter";
 import { Link } from "react-scroll";
+import { Section } from "../../../components/utils/sections";
 
 const Hero = () => {
   const phrases = [
-    "I'm Reward Joseph.",
+    "I'm Reward Edoyugbo.",
     "I'm a Web Developer.",
     "I'm a Programmer.",
   ];
@@ -26,7 +27,7 @@ const Hero = () => {
               </div>
             </h2>
             <p> based in Lublin, Poland 🇵🇱</p>
-            <Link to="Contact" smooth={true} duration={1}>
+            <Link to={Section.Contact} smooth={true} duration={1}>
               <Button variant="tertiary" className={styles.heroBtn}>
                 Contact Me
               </Button>
@@ -35,9 +36,14 @@ const Hero = () => {
         </div>
       </div>
       <div className={styles.scrollArrow}>
-        <a href="#About" className={styles.arrow}>
-          <FaChevronDown />{" "}
-        </a>
+        <Link
+          to={Section.About}
+          smooth={true}
+          duration={1}
+          className={styles.arrow}
+        >
+          <FaChevronDown />
+        </Link>
       </div>
     </section>
   );

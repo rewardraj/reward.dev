@@ -4,6 +4,7 @@ import { Featured } from "../../../components/ProfileDetail/ProfileDetail";
 import styles from "./About.module.scss";
 import { Container } from "../../../components/Layout/Container/Container";
 import Grid from "../../../components/Layout/Grid/Grid";
+import { FaDownload } from "react-icons/fa6";
 
 const About = () => {
   return (
@@ -30,7 +31,10 @@ const About = () => {
               </p>
             </div>
             <div className={styles.cvBtn}>
-              <ButtonDefault variant="tertiary">Download Resume</ButtonDefault>
+              <ButtonDefault variant="tertiary">
+                <span>Download Resume</span>
+                <FaDownload />
+              </ButtonDefault>
             </div>
           </div>
         </Grid>

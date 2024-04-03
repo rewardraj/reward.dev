@@ -31,7 +31,7 @@ const Navbar = () => {
                 alt="Rewards hero image"
               />
             </span>
-            <h1 className={styles.headerText}>Reward Joseph</h1>
+            <h1 className={styles.headerText}>Reward Codes</h1>
           </Link>
           <span className={styles.headerTextMobile}>
             <Link
@@ -41,7 +41,7 @@ const Navbar = () => {
               duration={1}
               className={styles.navLinkMobile}
             >
-              Reward Joseph
+              Reward Codes
             </Link>
           </span>
           <div className={styles.hamburger} onClick={toggleMobileMenu}>

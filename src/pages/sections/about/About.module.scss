@@ -71,6 +71,35 @@
 }
 
 .cvBtn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 2rem;
+
+  button {
+    border: none;
+    text-decoration: none;
+    background-color: transparent;
+    border: 1px solid var(--color-primary-light);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    span {
+      font-size: 16px;
+      font-weight: 500;
+      outline: none;
+    }
+
+    &:hover {
+      background-color: var(--color-primary-light);
+      color: whitesmoke;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
   @media screen and (max-width: 768px) {
     margin-bottom: 20px;
   }
