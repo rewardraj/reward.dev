@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Header from "../../../components/Header/Header";
 import { Container } from "../../../components/Layout/Container/Container";
 import Grid from "../../../components/Layout/Grid/Grid";
