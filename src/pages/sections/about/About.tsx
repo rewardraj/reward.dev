@@ -30,7 +30,7 @@ const About = () => {
               </p>
             </div>
             <div className={styles.cvBtn}>
-              <ButtonDefault variant="primary">Download CV</ButtonDefault>
+              <ButtonDefault variant="tertiary">Download Resume</ButtonDefault>
             </div>
           </div>
         </Grid>

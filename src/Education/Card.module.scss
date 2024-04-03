@@ -11,13 +11,16 @@
   &__body {
     padding: 0.5rem 0;
   }
+  &__header {
+    margin-top: 0.5rem;
+  }
 }
 
 .badge {
   background-color: #70cf82;
   color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+  padding: 0.6rem;
+  border-radius: 4px;
   font-size: 0.8rem;
   margin-bottom: 1rem;
 }

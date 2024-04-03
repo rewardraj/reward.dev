@@ -5,6 +5,9 @@
 }
 
 .dropdownHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 1rem;
   padding: 1rem;
   background-color: #f8f9fa;
@@ -12,6 +15,10 @@
   border-radius: 16px;
   border: none;
   cursor: pointer;
+}
+
+.dropdownIcon {
+  font-size: 1.5rem;
 }
 
 .dropdownListContainer {
@@ -29,7 +36,6 @@
   max-height: 200px;
   overflow-y: auto;
 }
-
 .dropdownListItem {
   padding: 1rem;
   font-size: 1rem;

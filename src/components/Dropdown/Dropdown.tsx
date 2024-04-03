@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Dropdown.module.scss";
+import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 
 interface DropdownProps {
   options: string[];
@@ -24,8 +25,20 @@ const Dropdown: React.FC<DropdownProps> = ({
   return (
     <div className={styles.dropdownContainer}>
       <div className={styles.dropdownHeader} onClick={onToggle}>
-        {selectedOption || title}
+        <div>{selectedOption || title}</div>
+        <div>
+          {isOpen ? (
+            <IoMdArrowDropup
+              className={`${styles.dropdownIcon} ${isOpen && styles.open}`}
+            />
+          ) : (
+            <IoMdArrowDropdown
+              className={`${styles.dropdownIcon} ${isOpen && styles.open}`}
+            />
+          )}
+        </div>
       </div>
+
       {isOpen && (
         <div className={styles.dropdownListContainer}>
           <div className={styles.dropdownList}>

@@ -6,6 +6,7 @@ import Card from "../../../Education/Card";
 import { educations, workExperience } from "../../../Education/ItemList";
 import Skills from "../../../components/Skills/Skills";
 import { FaDownload } from "react-icons/fa6";
+import ButtonDefault from "../../../components/Button/Button";
 
 const Resume = () => {
   return (
@@ -31,10 +32,10 @@ const Resume = () => {
           <Skills />
         </Grid>
         <div className={styles.downloadBtn}>
-          <button>
+          <ButtonDefault variant="primary">
             <span>Download Resume</span>
             <FaDownload />
-          </button>
+          </ButtonDefault>
         </div>
       </Container>
     </section>

@@ -24,11 +24,15 @@ const Contact = () => {
                 type="text"
                 placeholder="Name"
                 className={`${styles.input} ${styles.inputField}`}
+                required
+                name="name"
               />
               <input
                 type="email"
                 placeholder="Email"
                 className={`${styles.input} ${styles.inputField}`}
+                required
+                name="email"
               />
             </Grid>
             <Grid desktopColumns={1} gridGap="20px">

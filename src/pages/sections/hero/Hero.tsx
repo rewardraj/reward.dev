@@ -2,6 +2,7 @@ import { FaChevronDown } from "react-icons/fa";
 import Button from "../../../components/Button/Button";
 import styles from "./Hero.module.scss";
 import Typewriter from "../../../components/Typewriter/Typewriter";
+import { Link } from "react-scroll";
 
 const Hero = () => {
   const phrases = [
@@ -25,9 +26,11 @@ const Hero = () => {
               </div>
             </h2>
             <p> based in Lublin, Poland 🇵🇱</p>
-            <Button variant="tertiary" className={styles.heroBtn}>
-              Hire Me
-            </Button>
+            <Link to="Contact" smooth={true} duration={1}>
+              <Button variant="tertiary" className={styles.heroBtn}>
+                Contact Me
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
