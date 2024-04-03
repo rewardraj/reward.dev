@@ -2,6 +2,10 @@
   transition: all 0.5s ease;
 }
 
+.active {
+  color: var(--color-primary-light);
+}
+
 .headerText {
   cursor: pointer;
 
@@ -14,6 +18,12 @@
   position: sticky;
   top: 0;
   z-index: 1020;
+}
+
+.navLink.selected {
+  color: var(--color-primary-light);
+  border: none;
+  transition: color 0.3s ease;
 }
 
 .primaryMenu {

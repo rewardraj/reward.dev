@@ -110,10 +110,10 @@
 html {
   font-size: 16px;
   line-height: normal;
-  // font-family: "aileron", sans-serif;
-  font-family: "classico-urw", "Inter", system-ui, -apple-system, "Segoe UI",
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-    "Noto Color Emoji";
+  font-family: "aileron", sans-serif;
+  // font-family: "classico-urw", "Inter", system-ui, -apple-system, "Segoe UI",
+  //   sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+  //   "Noto Color Emoji";
 }
 
 body {
@@ -208,12 +208,6 @@ textarea {
     --section-margin-vertical: var(--section-margin-vertical-mobile);
   }
 }
-
-// .MainLayout {
-//   margin: 0 auto;
-//   box-sizing: border-box;
-//   max-width: 100%;
-// }
 
 @media screen and (max-width: 768px) {
   .MainLayout {

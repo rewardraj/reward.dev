@@ -7,7 +7,7 @@ import Grid from "../../../components/Layout/Grid/Grid";
 
 const About = () => {
   return (
-    <section id="about" className={styles.main}>
+    <section id="About" className={styles.main}>
       <Container>
         <Header title="About Me" />
         <Grid desktopColumns={1} mobileColumns={1}>

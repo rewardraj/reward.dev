@@ -13,7 +13,7 @@ const Home = () => {
       <div>
         <Navbar />
       </div>
-      <div id="content" role="main" className={styles.contentWrapper}>
+      <div id="Content" role="main" className={styles.contentWrapper}>
         <Hero />
         <About />
         <Services />

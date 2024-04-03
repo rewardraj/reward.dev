@@ -1,28 +1,34 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useState } from "react";
 
-export const useSection = (id: string) => {
-  const ref = useRef<HTMLElement | null>(null);
+export const useSection = (sectionIds: string[]) => {
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-            window.history.pushState(null, '', `#${id}`);
-        }
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && sectionIds.includes(entry.target.id)) {
+            setActiveSection(entry.target.id);
+          } else if (activeSection === entry.target.id) {
+            setActiveSection("");
+          }
+        });
       },
-      { rootMargin: '-50% 0px -50% 0px', threshold: 0 }
+      { threshold: 0.1 }
     );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
+  
+    sectionIds.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+  
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
+      sectionIds.forEach((id) => {
+        const element = document.getElementById(id);
+        if (element) observer.unobserve(element);
+      });
     };
-  }, [id]);
+  }, [sectionIds, activeSection]);
 
-  return ref;
+  return activeSection;
 };

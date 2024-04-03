@@ -12,7 +12,7 @@ const Portfolio = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section id="portfolio" className={styles.main}>
+    <section id="Portfolio" className={styles.main}>
       <Header title="Portfolio" />
       <div>
         <Tabs

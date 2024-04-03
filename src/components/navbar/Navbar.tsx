@@ -3,9 +3,13 @@ import { NavLink } from "react-router-dom";
 import { FaBars, FaGithub, FaLinkedin } from "react-icons/fa";
 import { useState } from "react";
 import { Link } from "react-scroll";
+import { useSection } from "../../hooks/useSection";
+import { Section } from "../utils/sections";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const sectionIds = Object.values(Section);
+  const currentSection = useSection(sectionIds);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -15,7 +19,11 @@ const Navbar = () => {
     <header id="header" className={styles.header}>
       <nav className={styles.primaryMenu}>
         <div className={styles.navContainer}>
-          <Link to="hero" className={styles.navTitle}>
+          <Link
+            to="Hero"
+            className={styles.navTitle}
+            activeClass={styles.selected}
+          >
             <span className={styles.navImageSpan}>
               <img
                 className={styles.navImage}
@@ -27,7 +35,8 @@ const Navbar = () => {
           </Link>
           <span className={styles.headerTextMobile}>
             <Link
-              to="hero"
+              to="Hero"
+              spy={true}
               smooth={true}
               duration={1}
               className={styles.navLinkMobile}
@@ -43,47 +52,21 @@ const Navbar = () => {
               isMobileMenuOpen ? styles.showMobileMenu : ""
             }`}
           >
-            <Link
-              to="about"
-              smooth={true}
-              duration={1}
-              className={styles.navLink}
-            >
-              About
-            </Link>
-            <Link
-              to="services"
-              smooth={true}
-              duration={1}
-              className={styles.navLink}
-            >
-              Services
-            </Link>
-            <Link
-              to="portfolio"
-              smooth={true}
-              duration={1}
-              className={styles.navLink}
-            >
-              Portfolio
-            </Link>
-            <Link
-              to="resume"
-              smooth={true}
-              duration={1}
-              className={styles.navLink}
-            >
-              Resume
-            </Link>
-
-            <Link
-              to="contact"
-              smooth={true}
-              duration={1}
-              className={styles.navLink}
-            >
-              Contact
-            </Link>
+            {sectionIds.map((sectionId) => (
+              <Link
+                key={sectionId}
+                to={sectionId}
+                smooth={true}
+                duration={1}
+                selected={currentSection === sectionId}
+                activeClass={styles.selected}
+                className={`${styles.navLink} ${
+                  currentSection === sectionId ? styles.selected : ""
+                }`}
+              >
+                {sectionId}
+              </Link>
+            ))}
           </div>
           <div className={styles.socialButtons}>
             <NavLink

@@ -9,7 +9,7 @@ import { FaDownload } from "react-icons/fa6";
 
 const Resume = () => {
   return (
-    <section id="resume" className={styles.main}>
+    <section id="Resume" className={styles.main}>
       <Container>
         <Header title="Summary" />
         <Grid desktopColumns={2} tabletColumns={2} mobileColumns={1}>

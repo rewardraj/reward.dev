@@ -8,12 +8,11 @@ const Hero = () => {
     "I'm Reward Joseph.",
     "I'm a Web Developer.",
     "I'm a Programmer.",
-    "I'm a System Architect.",
   ];
 
   const sleepTime = 100;
   return (
-    <section id="hero" className={styles.heroWrapper}>
+    <section id="Hero" className={styles.heroWrapper}>
       <div className={styles.heroMask}></div>
       <div className={styles.heroParallax}></div>
       <div className={styles.heroContent}>
@@ -33,7 +32,7 @@ const Hero = () => {
         </div>
       </div>
       <div className={styles.scrollArrow}>
-        <a href="#about" className={styles.arrow}>
+        <a href="#About" className={styles.arrow}>
           <FaChevronDown />{" "}
         </a>
       </div>

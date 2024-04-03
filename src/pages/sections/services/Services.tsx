@@ -7,7 +7,7 @@ import Grid from "../../../components/Layout/Grid/Grid";
 
 const Services = () => {
   return (
-    <section id="services" className={styles.main}>
+    <section id="Services" className={styles.main}>
       <Container>
         <Header title="Services" />
         <Grid desktopColumns={2} tabletColumns={2}>
