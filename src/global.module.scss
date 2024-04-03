@@ -110,7 +110,10 @@
 html {
   font-size: 16px;
   line-height: normal;
-  font-family: "aileron", sans-serif;
+  // font-family: "aileron", sans-serif;
+  font-family: "classico-urw", "Inter", system-ui, -apple-system, "Segoe UI",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
 }
 
 body {

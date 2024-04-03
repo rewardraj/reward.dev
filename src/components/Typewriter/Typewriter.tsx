@@ -66,7 +66,7 @@ const Typewriter: React.FC<TypewriterProps> = ({ phrases, sleepTime }) => {
     <div>
       <p className="typeEffect">
         <span className={styles.typed}>{currentWord}</span>
-        <span className="blink">|</span>
+        <span className={styles.blink}>|</span>
       </p>
     </div>
   );

@@ -36,16 +36,16 @@ const About = () => {
         </Grid>
         <Grid desktopColumns={4} tabletColumns={2} mobileColumns={2}>
           <div className={styles.gridInner}>
-            <Featured number="10+" description="Years Experience" />
+            <Featured number="3+" description="Years Experience" />
           </div>
           <div className={styles.gridInner}>
-            <Featured number="250+" description="Happy Clients" />
+            <Featured number="50+" description="Happy Clients" />
           </div>
           <div className={styles.gridInner}>
-            <Featured number="650+" description="Projects Done" />
+            <Featured number="40+" description="Projects Done" />
           </div>
           <div className={styles.gridInner}>
-            <Featured number="38+" description="Awards Received" />
+            <Featured number="4+" description="Awards Received" />
           </div>
         </Grid>
       </Container>

@@ -1,9 +1,18 @@
+import React, { useState } from "react";
 import Header from "../../../components/Header/Header";
 import { Container } from "../../../components/Layout/Container/Container";
 import Grid from "../../../components/Layout/Grid/Grid";
 import styles from "./Contact.module.scss";
+import Dropdown from "../../../components/Dropdown/Dropdown";
+import ButtonDefault from "../../../components/Button/Button";
 
 const Contact = () => {
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
+  const handleToggle = (name: string) => {
+    setOpenDropdown(openDropdown === name ? null : name);
+  };
+
   return (
     <section id="contact" className={styles.contact}>
       <Header title="Contact" />
@@ -11,39 +20,48 @@ const Contact = () => {
         <div className={styles.formContainer}>
           <form action="" className={styles.form}>
             <Grid desktopColumns={2}>
-              <input type="text" placeholder="Name" className={styles.input} />
+              <input
+                type="text"
+                placeholder="Name"
+                className={`${styles.input} ${styles.inputField}`}
+              />
               <input
                 type="email"
                 placeholder="Email"
-                className={styles.input}
+                className={`${styles.input} ${styles.inputField}`}
               />
             </Grid>
             <Grid desktopColumns={2} gridGap="20px">
-              <select name="item1" title="item1" className={styles.select}>
-                <option value="">What are you interested in?</option>
-                <option value="web-design">Web Design</option>
-                <option value="react">React</option>
-                <option value="typescript">TypeScript</option>
-                <option value="javascript">JavaScript</option>
-              </select>
-              <select name="item2" title="item2" className={styles.select}>
-                <option value="">What is your budget?</option>
-                <option value="500">$500</option>
-                <option value="1000">$1000</option>
-                <option value="2000">$2000</option>
-                <option value="5000">$5000+</option>
-              </select>
+              <Dropdown
+                title="What are you interested in?"
+                options={[
+                  "Web Design",
+                  "Mobile App Development",
+                  "UI/UX Design",
+                  "Branding",
+                  "SEO Services",
+                  "Other",
+                ]}
+                isOpen={openDropdown === "dropdown1"}
+                onToggle={() => handleToggle("dropdown1")}
+              />
+              <Dropdown
+                title="What is your budget?"
+                options={["$500", "$1000", "$2000", "$5000+"]}
+                isOpen={openDropdown === "dropdown2"}
+                onToggle={() => handleToggle("dropdown2")}
+              />
             </Grid>
             <Grid desktopColumns={1}>
               <textarea
                 placeholder="Tell me about your project..."
                 rows={5}
-                className={styles.textarea}
+                className={`${styles.textarea} ${styles.inputField}`}
               ></textarea>
             </Grid>
-            <Grid desktopColumns={1}>
-              <button className={styles.button}>Send</button>
-            </Grid>
+            <ButtonDefault variant="primary" className={styles.button}>
+              Send
+            </ButtonDefault>
           </form>
         </div>
       </Container>

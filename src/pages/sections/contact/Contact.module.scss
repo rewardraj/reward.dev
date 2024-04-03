@@ -1,32 +1,30 @@
-.contact {
-  padding: 2rem 0;
+.formContainer {
+  perspective: 1000px;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 2rem;
   max-width: 1000px;
   margin: 0 auto;
-}
-
-.formContainer {
-  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ffffff;
 }
 
 .input,
-.select,
 .textarea {
   padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #f9f9f9;
+  border: none;
+  border-radius: 16px;
+  background-color: #f8f9fa;
   font-size: 1rem;
   outline: none;
-  transition: border-color 0.3s ease;
+  box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 0.1);
 
   &:focus {
-    border-color: #337640;
+    background-color: #eaeef3;
+    box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -35,16 +33,14 @@
 }
 
 .button {
-  background-color: #337640;
-  color: #fff;
   border: none;
-  border-radius: 4px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
+  width: 10%;
+  outline: none;
+  text-align: center;
+  color: #ffffff;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease;
 
   &:hover {
-    background-color: #285c44;
+    transform: translateY(-2px);
   }
 }

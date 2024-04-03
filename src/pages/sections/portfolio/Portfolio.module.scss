@@ -17,6 +17,7 @@
   padding: 1rem;
   cursor: pointer;
   outline: none;
+  border: none;
   background: none;
   transition: color 0.3s ease;
 
@@ -27,6 +28,7 @@
   &.selected {
     color: var(--color-primary-light);
     border: none;
+    transition: color 0.3s ease;
 
     &:after {
       background-color: #20c997;
@@ -36,9 +38,18 @@
       height: 2px;
       left: 0;
       position: absolute;
-      -webkit-transform: translateY(-3px);
       transform: translateY(-3px);
       width: 100%;
+      animation: slideIn 0.5s forwards;
     }
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
   }
 }

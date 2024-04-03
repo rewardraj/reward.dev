@@ -11,11 +11,11 @@
   color: #4831d4;
   padding-top: 0.4rem;
   font-size: 1.8rem;
+}
 
-  .blink {
-    color: #fff;
-    animation: blink 1s infinite;
-  }
+.blink {
+  color: var(--color-primary-light);
+  animation: blink 1s infinite;
 }
 
 .typed {
