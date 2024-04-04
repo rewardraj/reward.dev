@@ -38,7 +38,13 @@ const Contact = () => {
           </div>
         )}
         <div className={styles.formContainer}>
-          <form className={styles.form} ref={form} onSubmit={sendEmail}>
+          <form
+            className={styles.form}
+            ref={form}
+            onSubmit={sendEmail}
+            method="POST"
+            data-sitekey={recaptchaKey}
+          >
             <Grid desktopColumns={2}>
               <input
                 type="text"
