@@ -32,6 +32,11 @@ const Contact = () => {
     <section id="Contact" className={styles.contact}>
       <Header title="Contact" />
       <Container>
+        {showToast && (
+          <div className={styles.toast}>
+            <p>Message sent successfully!</p>
+          </div>
+        )}
         <div className={styles.formContainer}>
           <form className={styles.form} ref={form} onSubmit={sendEmail}>
             <Grid desktopColumns={2}>
