@@ -31,7 +31,7 @@ const About = () => {
               </p>
             </div>
             <div className={styles.cvBtn}>
-              <ButtonDefault variant="tertiary">
+              <ButtonDefault variant="disabled" disabled={true}>
                 <span>Download Resume</span>
                 <FaDownload />
               </ButtonDefault>

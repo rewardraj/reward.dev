@@ -5,9 +5,24 @@ import Grid from "../../../components/Layout/Grid/Grid";
 import styles from "./Contact.module.scss";
 import Dropdown from "../../../components/Dropdown/Dropdown";
 import ButtonDefault from "../../../components/Button/Button";
+import {
+  serviceId,
+  contactFormTemplate,
+  publicKey,
+  recaptchaKey,
+} from "../../../components/utils/credentials";
+import Form from "../../../components/utils/form";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Contact = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
+
+  const { isSubmitting, showToast, form, sendEmail, refCaptcha } = Form(
+    serviceId,
+    contactFormTemplate,
+    publicKey
+  );
 
   const handleToggle = (name: string) => {
     setOpenDropdown(openDropdown === name ? null : name);
@@ -18,21 +33,21 @@ const Contact = () => {
       <Header title="Contact" />
       <Container>
         <div className={styles.formContainer}>
-          <form action="" className={styles.form}>
+          <form className={styles.form} ref={form} onSubmit={sendEmail}>
             <Grid desktopColumns={2}>
               <input
                 type="text"
                 placeholder="Name"
                 className={`${styles.input} ${styles.inputField}`}
                 required
-                name="name"
+                name="user_name"
               />
               <input
                 type="email"
                 placeholder="Email"
                 className={`${styles.input} ${styles.inputField}`}
                 required
-                name="email"
+                name="user_email"
               />
             </Grid>
             <Grid desktopColumns={1} gridGap="20px">
@@ -47,22 +62,28 @@ const Contact = () => {
                 ]}
                 isOpen={openDropdown === "dropdown1"}
                 onToggle={() => handleToggle("dropdown1")}
+                onOptionSelected={setSelectedOption}
               />
-              {/* <Dropdown
-                title="What is your budget?"
-                options={["$500", "$1000", "$2000", "$5000+"]}
-                isOpen={openDropdown === "dropdown2"}
-                onToggle={() => handleToggle("dropdown2")}
-              /> */}
+              <input
+                type="hidden"
+                name="subject"
+                value={selectedOption || ""}
+              />
             </Grid>
             <Grid desktopColumns={1}>
               <textarea
                 placeholder="Tell me more..."
                 rows={5}
+                name="message"
                 className={`${styles.textarea} ${styles.inputField}`}
               ></textarea>
             </Grid>
-            <ButtonDefault variant="primary" className={styles.button}>
+            <ReCAPTCHA sitekey={recaptchaKey} ref={refCaptcha} />
+            <ButtonDefault
+              variant="primary"
+              className={styles.button}
+              disabled={isSubmitting}
+            >
               Send
             </ButtonDefault>
           </form>

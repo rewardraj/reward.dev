@@ -32,7 +32,7 @@ const Resume = () => {
           <Skills />
         </Grid>
         <div className={styles.downloadBtn}>
-          <ButtonDefault variant="primary">
+          <ButtonDefault variant="disabled" disabled={true}>
             <span>Download Resume</span>
             <FaDownload />
           </ButtonDefault>

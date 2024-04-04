@@ -13,7 +13,6 @@ export const SkillBar: React.FC<SkillBarProps> = ({ skill, level, color }) => {
     <div className={styles.skillBar}>
       <div className={styles.skillName}>
         <p>{skill}</p>
-        <p>{level}</p>
       </div>
       <div className={styles.progressBar}>
         <div
@@ -32,10 +31,12 @@ export const Skills = () => {
         <h2>My Skills</h2>
       </div>
       <Grid desktopColumns={2} tabletColumns={2} mobileColumns={2}>
-        <SkillBar skill="Web Design" level={90} color="#70cf82" />
-        <SkillBar skill="React" level={80} color="#61dbfb" />
-        <SkillBar skill="TypeScript" level={60} color="#007acc" />
-        <SkillBar skill="JavaScript" level={80} color="#f5e842" />
+        <SkillBar skill="HTML" level={90} color="#e34c26" />
+        <SkillBar skill="CSS" level={80} color="#264de4" />
+        <SkillBar skill="Sass" level={80} color="#cc6699" />
+        <SkillBar skill="React" level={85} color="#61dbfb" />
+        <SkillBar skill="Node.js" level={75} color="#68a063" />
+        <SkillBar skill="Svelte" level={70} color="#ff3e00" />
       </Grid>
     </div>
   );

@@ -7,6 +7,7 @@ interface DropdownProps {
   title: string;
   isOpen?: boolean;
   onToggle: () => void;
+  onOptionSelected: (value: string) => void;
 }
 
 const Dropdown: React.FC<DropdownProps> = ({
@@ -14,11 +15,13 @@ const Dropdown: React.FC<DropdownProps> = ({
   title,
   isOpen,
   onToggle,
+  onOptionSelected,
 }) => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
   const onOptionClicked = (value: string) => {
     setSelectedOption(value);
+    if (onOptionSelected) onOptionSelected(value);
     onToggle();
   };
 
