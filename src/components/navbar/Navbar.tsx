@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Link } from "react-scroll";
 import { useSection } from "../../hooks/useSection";
 import { Section } from "../utils/sections";
+import heroImg from "../../assets/1.png";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -27,7 +28,7 @@ const Navbar = () => {
             <span className={styles.navImageSpan}>
               <img
                 className={styles.navImage}
-                src="/src/assets/1.png"
+                src={heroImg}
                 alt="Rewards hero image"
               />
             </span>
