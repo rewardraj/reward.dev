@@ -18,16 +18,15 @@ const About = () => {
                 My name is <span>Reward Edoyugbo</span> a full stack developer.
               </p>
               <p>
-                I have a passion for creating beautiful and functional websites.
-                I am a self-motivated architect with a background in computer
-                science. I have experience in building web applications using
-                modern technologies like React, Svelte, Node.js, Express, and
-                MongoDB.
+                User I'm an architect with a background in computer science who
+                enjoys building aesthetically pleasing and easy to use web
+                applications and programs, implementing modern technologies like
+                React, Svelte, and Node.js.
               </p>
               <p>
-                I am always eager to learn new things and improve my skills. I
-                am currently looking for new opportunities to work on exciting
-                projects and collaborate with other developers.
+                I'm looking for interesting projects where I can work with other
+                developers and build my skills because I'm always willing to
+                learn <br /> and progress.
               </p>
             </div>
             <div className={styles.cvBtn}>
@@ -46,10 +45,10 @@ const About = () => {
             <Featured number="50+" description="Happy Clients" />
           </div>
           <div className={styles.gridInner}>
-            <Featured number="40+" description="Projects Done" />
+            <Featured number="35+" description="Projects Done" />
           </div>
           <div className={styles.gridInner}>
-            <Featured number="4+" description="Awards Received" />
+            <Featured number="2+" description="Awards Received" />
           </div>
         </Grid>
       </Container>
