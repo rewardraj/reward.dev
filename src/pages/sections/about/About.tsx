@@ -16,17 +16,16 @@ const About = () => {
             <div className={styles.AboutMe}>
               <p>
                 My name is <span>Reward Edoyugbo</span> a full stack developer.
-              </p>
-              <p>
-                User I'm an architect with a background in computer science who
+                I'm an architect with a background in computer science who
                 enjoys building aesthetically pleasing and easy to use web
                 applications and programs, implementing modern technologies like
                 React, Svelte, and Node.js.
               </p>
+
               <p>
-                I'm looking for interesting projects where I can work with other
-                developers and build my skills because I'm always willing to
-                learn <br /> and progress.
+                Currently looking for interesting projects where I can work with
+                other developers and build my skills because I'm always willing
+                to learn <br /> and progress.
               </p>
             </div>
             <div className={styles.cvBtn}>

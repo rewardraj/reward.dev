@@ -15,13 +15,13 @@ const reactProjects = [
   {
     title: "SMOG Web App",
     imgSrc: "https://picsum.photos/900/500",
-    githubUrl: "github-url-1",
+    githubUrl: "https://github.com/rewardraj/React-Web-SMOG",
     projectUrl: "project-url-1",
   },
   {
     title: "Vegety Foods",
     imgSrc: "https://picsum.photos/800/700",
-    githubUrl: "github-url-2",
+    githubUrl: "https://github.com/rewardraj/Vegety",
     projectUrl: "project-url-2",
   },
   {
@@ -29,6 +29,12 @@ const reactProjects = [
     imgSrc: "https://picsum.photos/200/300",
     githubUrl: "github-url-3",
     projectUrl: "project-url-3",
+  },
+  {
+    title: "Troch Consultancy",
+    imgSrc: "https://picsum.photos/500/300",
+    githubUrl: "https://github.com/rewardraj/troch-consultancy",
+    projectUrl: "https://troch.co.uk/",
   },
 ];
 
