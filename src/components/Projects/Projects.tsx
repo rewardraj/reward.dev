@@ -11,7 +11,7 @@ interface ProjectProps {
   projectUrl: string;
 }
 
-const reactProjects = [
+const projects = [
   {
     title: "SMOG Web App",
     imgSrc: "https://picsum.photos/900/500",
@@ -25,9 +25,15 @@ const reactProjects = [
     projectUrl: "project-url-2",
   },
   {
+    title: "Svelte Project 3",
+    imgSrc: "https://picsum.photos/500/300",
+    githubUrl: "github-url-6",
+    projectUrl: "project-url-6",
+  },
+  {
     title: "The GadgetHub Store",
     imgSrc: "https://picsum.photos/200/300",
-    githubUrl: "github-url-3",
+    githubUrl: "https://github.com/TheGadgetHub/GadgetShop",
     projectUrl: "project-url-3",
   },
   {
@@ -36,9 +42,6 @@ const reactProjects = [
     githubUrl: "https://github.com/rewardraj/troch-consultancy",
     projectUrl: "https://troch.co.uk/",
   },
-];
-
-const svelteProjects = [
   {
     title: "Svelte Project 1",
     imgSrc: "https://picsum.photos/800/400",
@@ -50,12 +53,6 @@ const svelteProjects = [
     imgSrc: "https://picsum.photos/600/300",
     githubUrl: "github-url-5",
     projectUrl: "project-url-5",
-  },
-  {
-    title: "Svelte Project 3",
-    imgSrc: "https://picsum.photos/500/300",
-    githubUrl: "github-url-6",
-    projectUrl: "project-url-6",
   },
 ];
 
@@ -95,7 +92,7 @@ export const ProjectCard: React.FC<ProjectProps> = ({
 
 export const AllProjects = () => {
   const [currentProject, setCurrentProject] = useState(0);
-  const allProjects = [...reactProjects, ...svelteProjects];
+  const allProjects = [...projects];
 
   const showNext = () => {
     setCurrentProject((currentProject + 1) % allProjects.length);
@@ -110,7 +107,7 @@ export const AllProjects = () => {
     <Container>
       <Grid desktopColumns={3} tabletColumns={2}>
         {allProjects
-          .slice(currentProject, currentProject + 4)
+          .slice(currentProject, currentProject + 6)
           .map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}
@@ -126,7 +123,7 @@ export const AllProjects = () => {
         <button
           className={styles.button}
           onClick={showNext}
-          disabled={currentProject === allProjects.length - 3}
+          disabled={currentProject === allProjects.length - 6}
         >
           <FaChevronRight />
         </button>
@@ -135,22 +132,24 @@ export const AllProjects = () => {
   );
 };
 
-export const ReactProjects = () => (
-  <Container>
-    <Grid desktopColumns={3} tabletColumns={2}>
-      {reactProjects.map((project, index) => (
-        <ProjectCard key={index} {...project} />
-      ))}
-    </Grid>
-  </Container>
-);
+// Might add later for filtering projects
 
-export const SvelteProjects = () => (
-  <Container>
-    <Grid desktopColumns={3} tabletColumns={2}>
-      {svelteProjects.map((project, index) => (
-        <ProjectCard key={index} {...project} />
-      ))}
-    </Grid>
-  </Container>
-);
+// export const ReactProjects = () => (
+//   <Container>
+//     <Grid desktopColumns={3} tabletColumns={2}>
+//       {reactProjects.map((project, index) => (
+//         <ProjectCard key={index} {...project} />
+//       ))}
+//     </Grid>
+//   </Container>
+// );
+
+// export const SvelteProjects = () => (
+//   <Container>
+//     <Grid desktopColumns={3} tabletColumns={2}>
+//       {svelteProjects.map((project, index) => (
+//         <ProjectCard key={index} {...project} />
+//       ))}
+//     </Grid>
+//   </Container>
+// );

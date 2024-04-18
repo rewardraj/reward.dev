@@ -8,8 +8,8 @@
 }
 
 .maskedText {
-  opacity: 0.4;
-  color: #727373 !important;
+  opacity: 0.8;
+  color: var(--color-text-primary);
   font-weight: 600;
   font-size: clamp(2rem, 5vw, 4rem);
   text-transform: uppercase;

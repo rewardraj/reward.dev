@@ -1,20 +1,19 @@
-import { useState } from "react";
+// import { useState } from "react";
 import Header from "../../../components/Header/Header";
 import styles from "./Portfolio.module.scss";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import {
-  AllProjects,
-  ReactProjects,
-  SvelteProjects,
-} from "../../../components/Projects/Projects";
+// import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { AllProjects } from "../../../components/Projects/Projects";
 
 const Portfolio = () => {
-  const [activeTab, setActiveTab] = useState(0);
+  // const [activeTab, setActiveTab] = useState(0);
 
   return (
     <section id="Portfolio" className={styles.main}>
       <Header title="Portfolio" />
-      <div>
+      <AllProjects />
+
+      {/* might add this back later to have tabs for filtering projects */}
+      {/* <div>
         <Tabs
           className={styles.Tabs}
           selectedIndex={activeTab}
@@ -53,7 +52,7 @@ const Portfolio = () => {
             </div>
           </TabPanel>
         </Tabs>
-      </div>
+      </div> */}
     </section>
   );
 };
