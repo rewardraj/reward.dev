@@ -9,8 +9,9 @@
   justify-content: space-between;
   align-items: center;
   font-size: 1rem;
+  color: #4c4c4c;
   padding: 1rem;
-  background-color: #f8f9fa;
+  background-color: #eaeef3;
   box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   border: none;
@@ -28,7 +29,7 @@
   width: 100%;
   border: 1px solid #ccc;
   border-radius: 16px;
-  background-color: #f9f9f9;
+  background-color: #eaeef3;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -39,6 +40,7 @@
 .dropdownListItem {
   padding: 1rem;
   font-size: 1rem;
+  color: #333;
   cursor: pointer;
 
   &:hover {
