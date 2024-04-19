@@ -25,7 +25,7 @@ const About = () => {
               <p>
                 Currently looking for interesting projects where I can work with
                 other developers and build my skills because I'm always willing
-                to learn <br /> and progress.
+                to learn and progress.
               </p>
             </div>
             <div className={styles.cvBtn}>
