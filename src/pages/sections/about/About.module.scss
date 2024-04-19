@@ -41,19 +41,19 @@
   }
 }
 
-.gridInner {
-  margin-top: 3rem;
-  padding: 20px;
-  position: relative;
+// .gridInner {
+//   margin-top: 3rem;
+//   padding: 20px;
+//   position: relative;
 
-  @media screen and (max-width: 992px) {
-    margin-top: 0;
-    margin: 0;
-  }
-  @media screen and (max-width: 768px) {
-    margin-top: 0;
-  }
-}
+//   @media screen and (max-width: 992px) {
+//     margin-top: 0;
+//     margin: 0;
+//   }
+//   @media screen and (max-width: 768px) {
+//     margin-top: 0;
+//   }
+// }
 
 .emailLink {
   color: var(--color-primary-light);

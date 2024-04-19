@@ -37,18 +37,10 @@ const About = () => {
           </div>
         </Grid>
         <Grid desktopColumns={4} tabletColumns={2} mobileColumns={2}>
-          <div className={styles.gridInner}>
-            <Featured number="3+" description="Years Experience" />
-          </div>
-          <div className={styles.gridInner}>
-            <Featured number="50+" description="Happy Clients" />
-          </div>
-          <div className={styles.gridInner}>
-            <Featured number="35+" description="Projects Done" />
-          </div>
-          <div className={styles.gridInner}>
-            <Featured number="2+" description="Awards Received" />
-          </div>
+          <Featured number="3+" description="Years Experience" />
+          <Featured number="50+" description="Happy Clients" />
+          <Featured number="35+" description="Projects Done" />
+          <Featured number="2+" description="Awards Received" />
         </Grid>
       </Container>
     </section>

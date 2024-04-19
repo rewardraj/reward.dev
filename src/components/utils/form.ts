@@ -10,7 +10,6 @@ const Form = (serviceId: string, templateId: string, publicKey: string) => {
   const [option, setSelectOption] = useState<string | undefined>();
   const refCaptcha = createRef<ReCAPTCHA>();
 
-  
   const form = useRef<HTMLFormElement>(null);
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -20,14 +19,15 @@ const Form = (serviceId: string, templateId: string, publicKey: string) => {
         window.alert("Do the captcha challenge");
         return;
       }
-  
+
       setIsSubmitting(true);
       if (form.current) {
         const opts = {
           publicKey,
           "g-recaptcha-response": token,
         };
-        emailjs.sendForm(serviceId, templateId, form.current, opts as any)
+        emailjs
+          .sendForm(serviceId, templateId, form.current, opts as any)
           .then(() => {
             setShowToast(true);
             setTimeout(() => setShowToast(false), 5000);
