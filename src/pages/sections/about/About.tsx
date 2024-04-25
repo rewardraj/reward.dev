@@ -46,7 +46,6 @@ const About = () => {
           mobileColumns={2}
           aria-labelledby="featured-heading"
         >
-          <Header id="featured-heading" title="Featured" />
           <Featured number="3+" description="Years Experience" />
           <Featured number="50+" description="Happy Clients" />
           <Featured number="35+" description="Projects Done" />
