@@ -158,22 +158,27 @@
   .navLinks {
     position: absolute;
     top: 100%;
-    left: 55%;
+    left: 64%;
     flex-direction: column;
+    display: flex;
     background-color: #131313;
-    width: 50%;
-    display: none;
+    width: 43%;
+    height: 25dvh;
     cursor: pointer;
     z-index: 3;
+    transition: transform 0.3s ease-out;
+    transform: translateX(100%);
+  }
+  .showMobileMenu {
+    transform: translateX(0);
   }
 
   .navLink {
     display: block;
-    color: #f2f2f2;
     text-decoration: none;
-    padding: 10px;
-    text-align: right;
-    width: 100%;
+    text-align: center;
+    width: 50%;
+    margin-left: auto;
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 18px;

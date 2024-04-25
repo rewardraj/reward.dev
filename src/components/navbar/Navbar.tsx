@@ -66,7 +66,6 @@ const Navbar = () => {
             </Link>
           </span>
           <button
-            typeof="button"
             type="button"
             className={styles.hamburger}
             onClick={toggleMobileMenu}
