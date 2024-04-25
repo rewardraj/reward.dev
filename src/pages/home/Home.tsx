@@ -9,19 +9,19 @@ import styles from "./Home.module.scss";
 
 const Home = () => {
   return (
-    <div>
-      <div>
+    <>
+      <>
         <Navbar />
-      </div>
-      <div id="Content" role="main" className={styles.contentWrapper}>
+      </>
+      <main id="Content" role="main" className={styles.contentWrapper}>
         <Hero />
         <About />
         <Services />
         <Portfolio />
         <Resume />
         <Contact />
-      </div>
-    </div>
+      </main>
+    </>
   );
 };
 

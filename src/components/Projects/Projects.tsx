@@ -25,10 +25,10 @@ const projects = [
     projectUrl: "project-url-2",
   },
   {
-    title: "Svelte Project 3",
-    imgSrc: "https://picsum.photos/500/300",
-    githubUrl: "github-url-6",
-    projectUrl: "project-url-6",
+    title: "Portfolio Website",
+    imgSrc: "https://picsum.photos/600/300",
+    githubUrl: "https://github.com/rewardraj/reward.dev",
+    projectUrl: "https://rewardcodes.vercel.app/",
   },
   {
     title: "The GadgetHub Store",
@@ -43,16 +43,10 @@ const projects = [
     projectUrl: "https://troch.co.uk/",
   },
   {
-    title: "Svelte Project 1",
+    title: "Tour Inc Travel Agency",
     imgSrc: "https://picsum.photos/800/400",
     githubUrl: "github-url-4",
     projectUrl: "project-url-4",
-  },
-  {
-    title: "Svelte Project 2",
-    imgSrc: "https://picsum.photos/600/300",
-    githubUrl: "github-url-5",
-    projectUrl: "project-url-5",
   },
 ];
 
@@ -62,9 +56,13 @@ export const ProjectCard: React.FC<ProjectProps> = ({
   githubUrl,
   projectUrl,
 }) => (
-  <div className={styles.project}>
+  <article className={styles.project} aria-label={`Project: ${title}`}>
     <div className={styles.projectImage}>
-      <img src={imgSrc} alt={title} className={styles.imgResponsive} />
+      <img
+        src={imgSrc}
+        alt={`Image of ${title}`}
+        className={styles.imgResponsive}
+      />
     </div>
     <div className={styles.projectInfo}>
       <h3 className={styles.projectTitle}>{title}</h3>
@@ -74,6 +72,7 @@ export const ProjectCard: React.FC<ProjectProps> = ({
           className={styles.githubLink}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`GitHub link for ${title}`}
         >
           GitHub
         </a>
@@ -82,12 +81,13 @@ export const ProjectCard: React.FC<ProjectProps> = ({
           className={styles.projectLink}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`Live demo link for ${title}`}
         >
           Live Demo
         </a>
       </div>
     </div>
-  </div>
+  </article>
 );
 
 export const AllProjects = () => {
@@ -117,6 +117,8 @@ export const AllProjects = () => {
           className={styles.button}
           onClick={showPrevious}
           disabled={currentProject === 0}
+          aria-label="Show previous projects"
+          role="button"
         >
           <FaChevronLeft />
         </button>
@@ -124,6 +126,8 @@ export const AllProjects = () => {
           className={styles.button}
           onClick={showNext}
           disabled={currentProject === allProjects.length - 6}
+          aria-label="Show next projects"
+          role="button"
         >
           <FaChevronRight />
         </button>

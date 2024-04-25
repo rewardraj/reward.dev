@@ -8,21 +8,22 @@ interface SkillBarProps {
   color?: string;
 }
 
-export const SkillBar: React.FC<SkillBarProps> = ({ skill, level, color }) => {
-  return (
-    <div className={styles.skillBar}>
-      <div className={styles.skillName}>
-        <p>{skill}</p>
-      </div>
-      <div className={styles.progressBar}>
-        <div
-          className={styles.progressLevel}
-          style={{ width: `${level}%`, backgroundColor: color }}
-        ></div>
-      </div>
+export const SkillBar: React.FC<SkillBarProps> = ({ skill, level, color }) => (
+  <figure className={styles.skillBar}>
+    <figcaption className={styles.skillName}>{skill}</figcaption>
+    <div className={styles.progressBar}>
+      <div
+        className={styles.progressLevel}
+        style={{ width: `${level}%`, backgroundColor: color }}
+        role="progressbar"
+        aria-valuenow={level}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        title="Skill Level"
+      ></div>
     </div>
-  );
-};
+  </figure>
+);
 
 export const Skills = () => {
   return (

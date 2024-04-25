@@ -190,7 +190,9 @@
   .hamburger {
     display: block;
     order: 3;
-    color: #fff;
+    background: transparent !important;
+    color: #f2f2f2;
+    border: none;
     font-size: 1.7rem;
     cursor: pointer;
     margin-bottom: -2px;

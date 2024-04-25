@@ -8,11 +8,11 @@ const App: React.FC = () => {
   return (
     <Router>
       <ScrollTop />
-      <div id="MainWrapper" className={styles.MainLayout}>
+      <main id="MainWrapper" className={styles.MainLayout} role="main">
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
-      </div>
+      </main>
     </Router>
   );
 };

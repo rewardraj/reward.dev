@@ -46,20 +46,26 @@ const Contact = () => {
             data-sitekey={recaptchaKey}
           >
             <Grid desktopColumns={2}>
-              <input
-                type="text"
-                placeholder="Name"
-                className={`${styles.input} ${styles.inputField}`}
-                required
-                name="user_name"
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                className={`${styles.input} ${styles.inputField}`}
-                required
-                name="user_email"
-              />
+              <label htmlFor="user_name" className={styles.inputLabel}>
+                <input
+                  type="text"
+                  id="user_name"
+                  placeholder="Name"
+                  className={`${styles.input} ${styles.inputField}`}
+                  required
+                  name="user_name"
+                />
+              </label>
+              <label htmlFor="user_email">
+                <input
+                  type="email"
+                  id="user_email"
+                  placeholder="Email"
+                  className={`${styles.input} ${styles.inputField}`}
+                  required
+                  name="user_email"
+                />
+              </label>
             </Grid>
             <Grid desktopColumns={1} gridGap="20px">
               <Dropdown
@@ -94,6 +100,7 @@ const Contact = () => {
               variant="primary"
               className={styles.button}
               disabled={isSubmitting}
+              aria-label="Send message"
             >
               Send
             </ButtonDefault>

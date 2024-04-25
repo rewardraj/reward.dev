@@ -12,13 +12,13 @@ export const Service: React.FC<ServiceItemProps> = ({
   title,
   description,
 }) => (
-  <div className={styles.gridInner}>
+  <section className={styles.gridInner} aria-label={`Service: ${title}`}>
     <div className={styles.ServiceIcon}>
-      <IconComponent className={styles.icon} />
+      <IconComponent className={styles.icon} aria-hidden="true" />
     </div>
     <div className={styles.Service}>
       <h4>{title}</h4>
       <p>{description}</p>
     </div>
-  </div>
+  </section>
 );

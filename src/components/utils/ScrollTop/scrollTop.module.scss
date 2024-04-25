@@ -12,6 +12,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  border: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,6 +35,9 @@
 
 .scrollButton:hover {
   background-color: var(--color-primary);
+}
+.scrollButton:focus {
+  outline: 1px solid #ffffff;
 }
 
 .arrowIcon {

@@ -31,10 +31,16 @@ const ScrollTop = () => {
     <div
       className={styles.scrollToTop}
       style={{ display: isVisible ? "block" : "none" }}
+      aria-live="polite"
     >
-      <div className={styles.scrollButton} onClick={scrollToTop}>
+      <button
+        type="button"
+        className={styles.scrollButton}
+        onClick={scrollToTop}
+        aria-label="Scroll to top"
+      >
         <FaChevronUp className={styles.arrowIcon} />
-      </div>
+      </button>
     </div>
   );
 };

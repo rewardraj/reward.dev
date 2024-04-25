@@ -4,6 +4,7 @@ import styles from "./Header.module.scss";
 interface HeaderProps {
   title: string;
   subtitle?: string;
+  id?: string;
 }
 
 const Header: React.FC<HeaderProps> = ({ title, subtitle }) => {

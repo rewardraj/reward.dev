@@ -42,7 +42,7 @@ const Hero = () => {
           duration={1}
           className={styles.arrow}
         >
-          <FaChevronDown />
+          <FaChevronDown aria-hidden="true" aria-label="Scroll down" />
         </Link>
       </div>
     </section>

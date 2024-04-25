@@ -8,10 +8,14 @@ import { FaDownload } from "react-icons/fa6";
 
 const About = () => {
   return (
-    <section id="About" className={styles.main}>
+    <section id="About" className={styles.main} aria-labelledby="about-heading">
       <Container>
-        <Header title="About Me" />
-        <Grid desktopColumns={1} mobileColumns={1}>
+        <Header id="about-heading" title="About Me" />
+        <Grid
+          desktopColumns={1}
+          mobileColumns={1}
+          aria-labelledby="about-heading"
+        >
           <div>
             <div className={styles.AboutMe}>
               <p>
@@ -31,12 +35,18 @@ const About = () => {
             <div className={styles.cvBtn}>
               <ButtonDefault variant="disabled" disabled={true}>
                 <span>Download Resume</span>
-                <FaDownload />
+                <FaDownload aria-hidden="true" />
               </ButtonDefault>
             </div>
           </div>
         </Grid>
-        <Grid desktopColumns={4} tabletColumns={2} mobileColumns={2}>
+        <Grid
+          desktopColumns={4}
+          tabletColumns={2}
+          mobileColumns={2}
+          aria-labelledby="featured-heading"
+        >
+          <Header id="featured-heading" title="Featured" />
           <Featured number="3+" description="Years Experience" />
           <Featured number="50+" description="Happy Clients" />
           <Featured number="35+" description="Projects Done" />

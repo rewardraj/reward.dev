@@ -1,7 +1,7 @@
 import styles from "./Navbar.module.scss";
 import { NavLink } from "react-router-dom";
 import { FaBars, FaGithub, FaLinkedin } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-scroll";
 import { useSection } from "../../hooks/useSection";
 import { Section } from "../utils/sections";
@@ -11,19 +11,38 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const sectionIds = Object.values(Section);
   const currentSection = useSection(sectionIds);
+  const ref = useRef<HTMLDivElement>(null);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (
+        isMobileMenuOpen &&
+        ref.current &&
+        !ref.current.contains(e.target as Node)
+      ) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <header id="header" className={styles.header}>
-      <nav className={styles.primaryMenu}>
+      <nav className={styles.primaryMenu} ref={ref}>
         <div className={styles.navContainer}>
           <Link
             to="Hero"
             className={styles.navTitle}
             activeClass={styles.selected}
+            aria-label="Go to Hero section"
           >
             <span className={styles.navImageSpan}>
               <img
@@ -41,22 +60,32 @@ const Navbar = () => {
               smooth={true}
               duration={1}
               className={styles.navLinkMobile}
+              aria-label="Navigate to Hero section"
             >
               Reward Codes
             </Link>
           </span>
-          <div className={styles.hamburger} onClick={toggleMobileMenu}>
+          <button
+            typeof="button"
+            type="button"
+            className={styles.hamburger}
+            onClick={toggleMobileMenu}
+            aria-label="Toggle menu"
+            title="Toggle menu"
+          >
             <FaBars />
-          </div>
+          </button>
           <div
             className={`${styles.navLinks} ${
               isMobileMenuOpen ? styles.showMobileMenu : ""
             }`}
+            role="menu"
           >
             {sectionIds.map((sectionId) => (
               <Link
                 key={sectionId}
                 to={sectionId}
+                role="menuitem"
                 smooth={true}
                 duration={1}
                 selected={currentSection === sectionId}
@@ -74,6 +103,7 @@ const Navbar = () => {
               to="https://www.linkedin.com/in/rewardraj"
               target="_blank"
               className={styles.socialButton}
+              aria-label="Link to LinkedIn Profile"
             >
               <FaLinkedin className={styles.iconBtn} />
             </NavLink>
@@ -82,6 +112,7 @@ const Navbar = () => {
               to="https://github.com/rewardraj"
               target="_blank"
               className={styles.socialButton}
+              aria-label="Link to GitHub Project"
             >
               <FaGithub className={styles.iconBtn} />
             </NavLink>
