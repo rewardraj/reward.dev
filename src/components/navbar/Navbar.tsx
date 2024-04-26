@@ -36,13 +36,12 @@ const Navbar = () => {
 
   return (
     <header id="header" className={styles.header}>
-      <nav className={styles.primaryMenu} ref={ref}>
+      <nav className={styles.primaryMenu}>
         <div className={styles.navContainer}>
           <Link
             to="Hero"
             className={styles.navTitle}
             activeClass={styles.selected}
-            aria-label="Go to Hero section"
           >
             <span className={styles.navImageSpan}>
               <img
@@ -65,15 +64,14 @@ const Navbar = () => {
               Reward Codes
             </Link>
           </span>
-          <button
-            type="button"
+          <div
             className={styles.hamburger}
             onClick={toggleMobileMenu}
             aria-label="Toggle menu"
             title="Toggle menu"
           >
             <FaBars />
-          </button>
+          </div>
           <div
             className={`${styles.navLinks} ${
               isMobileMenuOpen ? styles.showMobileMenu : ""
