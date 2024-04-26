@@ -28,16 +28,16 @@ const Navbar = () => {
       }
     };
 
-    document.addEventListener("mousedown", handleOutsideClick);
+    document.addEventListener("mousedown", handleOutsideClick, true);
     return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("mousedown", handleOutsideClick, true);
     };
   }, [isMobileMenuOpen]);
 
   return (
     <header id="header" className={styles.header}>
-      <nav className={styles.primaryMenu}>
-        <div className={styles.navContainer}>
+      <nav className={styles.primaryMenu} ref={ref}>
+        <section className={styles.navContainer}>
           <Link
             to="Hero"
             className={styles.navTitle}
@@ -64,15 +64,16 @@ const Navbar = () => {
               Reward Codes
             </Link>
           </span>
-          <div
+          <button
+            type="button"
             className={styles.hamburger}
             onClick={toggleMobileMenu}
             aria-label="Toggle menu"
             title="Toggle menu"
           >
             <FaBars />
-          </div>
-          <div
+          </button>
+          <section
             className={`${styles.navLinks} ${
               isMobileMenuOpen ? styles.showMobileMenu : ""
             }`}
@@ -94,8 +95,8 @@ const Navbar = () => {
                 {sectionId}
               </Link>
             ))}
-          </div>
-          <div className={styles.socialButtons}>
+          </section>
+          <section className={styles.socialButtons}>
             <NavLink
               to="https://www.linkedin.com/in/rewardraj"
               target="_blank"
@@ -113,8 +114,8 @@ const Navbar = () => {
             >
               <FaGithub className={styles.iconBtn} />
             </NavLink>
-          </div>
-        </div>
+          </section>
+        </section>
       </nav>
     </header>
   );
