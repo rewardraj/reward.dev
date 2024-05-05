@@ -5,6 +5,7 @@ import styles from "./About.module.scss";
 import { Container } from "../../../components/Layout/Container/Container";
 import Grid from "../../../components/Layout/Grid/Grid";
 import { FaDownload } from "react-icons/fa6";
+import { downloadResume } from "../../../components/utils/Resume/download";
 
 const About = () => {
   return (
@@ -20,10 +21,10 @@ const About = () => {
             <div className={styles.AboutMe}>
               <p>
                 My name is <span>Reward Edoyugbo</span> a full stack developer.
-                I'm an architect with a background in computer science who
-                enjoys building aesthetically pleasing and easy to use web
-                applications and programs, implementing modern technologies like
-                React, Svelte, and Node.js.
+                With a passion for crafting elegant and user-centric web
+                applications using cutting-edge technologies. Currently Seeking
+                dynamic projects to collaborate with talented teams, fostering
+                continuous learning and growth.
               </p>
 
               <p>
@@ -33,7 +34,7 @@ const About = () => {
               </p>
             </div>
             <div className={styles.cvBtn}>
-              <ButtonDefault variant="disabled" disabled={true}>
+              <ButtonDefault variant="primary" onClick={() => downloadResume()}>
                 <span>Download Resume</span>
                 <FaDownload aria-hidden="true" />
               </ButtonDefault>

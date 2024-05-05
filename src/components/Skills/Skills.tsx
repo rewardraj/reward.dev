@@ -33,10 +33,10 @@ export const Skills = () => {
       </div>
       <Grid desktopColumns={2} tabletColumns={2} mobileColumns={2}>
         <SkillBar skill="HTML" level={90} color="#e34c26" />
-        <SkillBar skill="CSS" level={80} color="#264de4" />
+        <SkillBar skill="Node.js" level={75} color="#68a063" />
         <SkillBar skill="Scss" level={80} color="#cc6699" />
         <SkillBar skill="React" level={85} color="#61dbfb" />
-        <SkillBar skill="Node.js" level={75} color="#68a063" />
+        <SkillBar skill="TypeScript" level={80} color="#007acc" />
         <SkillBar skill="Svelte" level={70} color="#ff3e00" />
       </Grid>
     </div>
