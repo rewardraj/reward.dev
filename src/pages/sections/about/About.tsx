@@ -26,12 +26,6 @@ const About = () => {
                 dynamic projects to collaborate with talented teams, fostering
                 continuous learning and growth.
               </p>
-
-              <p>
-                Currently looking for interesting projects where I can work with
-                other developers and build my skills because I'm always willing
-                to learn and progress.
-              </p>
             </div>
             <div className={styles.cvBtn}>
               <ButtonDefault variant="primary" onClick={() => downloadResume()}>
