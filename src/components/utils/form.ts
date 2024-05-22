@@ -33,10 +33,6 @@ const Form = (serviceId: string, templateId: string, publicKey: string) => {
             setTimeout(() => setShowToast(false), 5000);
             if (form.current) {
               form.current.reset();
-              setEmail("");
-              setName("");
-              setSelectOption("");
-              refCaptcha?.current?.reset();
             }
             setIsSubmitting(false);
           })
@@ -45,6 +41,11 @@ const Form = (serviceId: string, templateId: string, publicKey: string) => {
             setShowToast(true);
             setTimeout(() => setShowToast(false), 5000);
             setIsSubmitting(false);
+          })
+          .finally(() => {
+            if (refCaptcha.current) {
+              refCaptcha.current.reset();
+            }
           });
       }
     } else {
