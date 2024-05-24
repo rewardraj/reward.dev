@@ -31,7 +31,7 @@ const projects = [
     projectUrl: "https://rewardcodes.vercel.app/",
   },
   {
-    title: "The GadgetHub Store",
+    title: "The GadgetHub Store (WIP)",
     imgSrc: "https://picsum.photos/200/300",
     githubUrl: "https://github.com/TheGadgetHub/GadgetShop",
     projectUrl: "project-url-3",
@@ -43,10 +43,10 @@ const projects = [
     projectUrl: "https://troch.co.uk/",
   },
   {
-    title: "Tour Inc Travel Agency",
+    title: "Tour NG Travels (WIP)",
     imgSrc: "https://picsum.photos/800/400",
-    githubUrl: "github-url-4",
-    projectUrl: "project-url-4",
+    githubUrl: "https://github.com/rewardraj/tour-ng",
+    projectUrl: "https://ngtours.vercel.app",
   },
 ];
 
