@@ -13,16 +13,16 @@ interface ProjectProps {
 
 const projects = [
   {
-    title: "SMOG Web App",
-    imgSrc: "https://picsum.photos/900/500",
-    githubUrl: "https://github.com/rewardraj/React-Web-SMOG",
-    projectUrl: "project-url-1",
+    title: "Troch Consultancy",
+    imgSrc: "https://picsum.photos/500/300",
+    githubUrl: "https://github.com/rewardraj/troch-consultancy",
+    projectUrl: "https://troch.co.uk/",
   },
   {
-    title: "Vegety Foods",
-    imgSrc: "https://picsum.photos/800/700",
-    githubUrl: "https://github.com/rewardraj/Vegety",
-    projectUrl: "project-url-2",
+    title: "Tour NG Travels (WIP)",
+    imgSrc: "https://picsum.photos/800/400",
+    githubUrl: "https://github.com/rewardraj/tour-ng",
+    projectUrl: "https://ngtours.vercel.app",
   },
   {
     title: "Portfolio Website",
@@ -37,16 +37,16 @@ const projects = [
     projectUrl: "project-url-3",
   },
   {
-    title: "Troch Consultancy",
-    imgSrc: "https://picsum.photos/500/300",
-    githubUrl: "https://github.com/rewardraj/troch-consultancy",
-    projectUrl: "https://troch.co.uk/",
+    title: "SMOG Web App",
+    imgSrc: "https://picsum.photos/900/500",
+    githubUrl: "https://github.com/rewardraj/React-Web-SMOG",
+    projectUrl: "project-url-1",
   },
   {
-    title: "Tour NG Travels (WIP)",
-    imgSrc: "https://picsum.photos/800/400",
-    githubUrl: "https://github.com/rewardraj/tour-ng",
-    projectUrl: "https://ngtours.vercel.app",
+    title: "Vegety Foods",
+    imgSrc: "https://picsum.photos/800/700",
+    githubUrl: "https://github.com/rewardraj/Vegety",
+    projectUrl: "project-url-2",
   },
 ];
 
