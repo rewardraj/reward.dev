@@ -13,6 +13,12 @@ interface ProjectProps {
 
 const projects = [
   {
+    title: "EduTech Learning Platform",
+    imgSrc: "https://picsum.photos/900/500",
+    githubUrl: "https://github.com/rewardraj/EduTech",
+    projectUrl: "https://edusupport.vercel.app/",
+  },
+  {
     title: "Troch Consultancy",
     imgSrc: "https://picsum.photos/500/300",
     githubUrl: "https://github.com/rewardraj/troch-consultancy",
@@ -36,12 +42,7 @@ const projects = [
     githubUrl: "https://github.com/TheGadgetHub/GadgetShop",
     projectUrl: "project-url-3",
   },
-  {
-    title: "SMOG Web App",
-    imgSrc: "https://picsum.photos/900/500",
-    githubUrl: "https://github.com/rewardraj/React-Web-SMOG",
-    projectUrl: "project-url-1",
-  },
+
   {
     title: "Vegety Foods",
     imgSrc: "https://picsum.photos/800/700",
