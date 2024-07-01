@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /private/
+Disallow: /admin/
+Disallow: /secret/
+Allow: /public/
+
+Sitemap: https://www.fixitreward.dev/sitemap.xml

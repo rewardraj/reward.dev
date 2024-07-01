@@ -54,7 +54,7 @@ const Navbar = () => {
           </Link>
           <span className={styles.headerTextMobile}>
             <Link
-              to="Hero"
+              to="#Hero"
               spy={true}
               smooth={true}
               duration={1}
@@ -102,6 +102,7 @@ const Navbar = () => {
               target="_blank"
               className={styles.socialButton}
               aria-label="Link to LinkedIn Profile"
+              rel="me"
             >
               <FaLinkedin className={styles.iconBtn} />
             </NavLink>
@@ -110,6 +111,7 @@ const Navbar = () => {
               to="https://github.com/rewardraj"
               target="_blank"
               className={styles.socialButton}
+              rel="me"
               aria-label="Link to GitHub Project"
             >
               <FaGithub className={styles.iconBtn} />
