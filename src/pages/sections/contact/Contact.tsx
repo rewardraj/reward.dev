@@ -95,7 +95,13 @@ const Contact = () => {
                 className={`${styles.textarea} ${styles.inputField}`}
               ></textarea>
             </Grid>
-            <ReCAPTCHA sitekey={recaptchaKey} ref={refCaptcha} />
+            <div className={styles.recaptcha}>
+              <ReCAPTCHA
+                sitekey={recaptchaKey}
+                ref={refCaptcha}
+                data-size="normal"
+              />
+            </div>
             <ButtonDefault
               variant="primary"
               className={styles.button}

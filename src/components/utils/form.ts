@@ -17,7 +17,7 @@ const Form = (serviceId: string, templateId: string, publicKey: string) => {
     if (refCaptcha.current) {
       const token = refCaptcha.current.getValue();
       if (!token) {
-        window.alert("Do the captcha challenge");
+        alert("Do the captcha challenge");
         return;
       }
 
