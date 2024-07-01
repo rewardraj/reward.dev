@@ -29,7 +29,7 @@ const Hero = () => {
             <p> based in Poland 🇵🇱</p>
             <Link to={Section.Contact} smooth={true} duration={1}>
               <Button variant="tertiary" className={styles.heroBtn}>
-                Contact Me
+                Leave a message
               </Button>
             </Link>
           </div>
