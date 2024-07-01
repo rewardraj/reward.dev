@@ -7,7 +7,7 @@ import { Section } from "../../../components/utils/sections";
 
 const Hero = () => {
   const phrases = [
-    "I'm Reward Edoyugbo.",
+    "I'm Fix it Reward.",
     "I'm a Web Developer.",
     "I'm a Programmer.",
   ];
@@ -26,7 +26,7 @@ const Hero = () => {
                 <Typewriter phrases={phrases} sleepTime={sleepTime} />
               </div>
             </h2>
-            <p> based in Lublin, Poland 🇵🇱</p>
+            <p> based in Poland 🇵🇱</p>
             <Link to={Section.Contact} smooth={true} duration={1}>
               <Button variant="tertiary" className={styles.heroBtn}>
                 Contact Me
