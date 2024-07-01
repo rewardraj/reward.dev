@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import styles from "./Projects.module.scss";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import Grid from "../Layout/Grid/Grid";
@@ -94,7 +95,7 @@ export const ProjectCard: React.FC<ProjectProps> = ({
 export const AllProjects = () => {
   const [currentProject, setCurrentProject] = useState(0);
   const allProjects = [...projects];
-
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const showNext = () => {
     setCurrentProject((currentProject + 1) % allProjects.length);
   };
@@ -106,12 +107,16 @@ export const AllProjects = () => {
   };
   return (
     <Container>
-      <Grid desktopColumns={3} tabletColumns={2}>
-        {allProjects
-          .slice(currentProject, currentProject + 6)
-          .map((project, index) => (
-            <ProjectCard key={index} {...project} />
-          ))}
+      <Grid desktopColumns={3} tabletColumns={2} mobileColumns={1}>
+        {isTabletOrMobile
+          ? allProjects
+              .slice(currentProject, currentProject + 1)
+              .map((project, index) => <ProjectCard key={index} {...project} />)
+          : allProjects
+              .slice(currentProject, currentProject + 3)
+              .map((project, index) => (
+                <ProjectCard key={index} {...project} />
+              ))}
       </Grid>
       <div className={styles.moreBtn}>
         <button
@@ -126,7 +131,11 @@ export const AllProjects = () => {
         <button
           className={styles.button}
           onClick={showNext}
-          disabled={currentProject === allProjects.length - 6}
+          disabled={
+            isTabletOrMobile
+              ? currentProject === allProjects.length - 1
+              : currentProject >= allProjects.length - 3
+          }
           aria-label="Show next projects"
           role="button"
         >

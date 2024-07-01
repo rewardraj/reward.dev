@@ -8,13 +8,20 @@ export const educations = [
 ];
 
 export const workExperience = [
-  // {
-  //   period: "Jul 2023 - Present",
-  //   course: "Full Stack Developer",
-  //   school: "Robiki AI",
-  //   description:
-  //     "Managed a team of developers to build AI in-house products for the company.",
-  // },
+  {
+    period: "Jul 2024 - Present",
+    course: "Frontend Developer",
+    school: "Payback, Warsaw PL",
+    description:
+      "Developing and maintaining frontend projects for the company. Working with React and Typescript.",
+  },
+  {
+    period: "Jul 2023 - June 2024",
+    course: "Full Stack Developer",
+    school: "Robiki AI",
+    description:
+      "Managed a team of developers to build AI in-house product for the company. Technologies used include Svelte-ts, Node.js",
+  },
   {
     period: "Jul 2022 - Oct 2022",
     course: "Junior Frontend Developer",
