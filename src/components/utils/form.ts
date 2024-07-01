@@ -1,5 +1,5 @@
 import emailjs from "@emailjs/browser";
-import { useState, useRef, createRef } from "react";
+import { useState, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const Form = (serviceId: string, templateId: string, publicKey: string) => {
@@ -8,7 +8,8 @@ const Form = (serviceId: string, templateId: string, publicKey: string) => {
   const [name, setName] = useState<string | undefined>();
   const [email, setEmail] = useState<string | undefined>();
   const [option, setSelectOption] = useState<string | undefined>();
-  const refCaptcha = createRef<ReCAPTCHA>();
+  const captchaKey = useRef<number>(new Date().getTime());
+  const refCaptcha = useRef<ReCAPTCHA>(null);
 
   const form = useRef<HTMLFormElement>(null);
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
@@ -42,9 +43,12 @@ const Form = (serviceId: string, templateId: string, publicKey: string) => {
             setTimeout(() => setShowToast(false), 5000);
             setIsSubmitting(false);
           })
+
+          //this fixes captcha reset issue
           .finally(() => {
             if (refCaptcha.current) {
               refCaptcha.current.reset();
+              captchaKey.current = new Date().getTime();
             }
           });
       }
@@ -58,6 +62,7 @@ const Form = (serviceId: string, templateId: string, publicKey: string) => {
     showToast,
     form,
     sendEmail,
+    captchaKey,
     email,
     setEmail,
     name,
