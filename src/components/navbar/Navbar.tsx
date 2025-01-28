@@ -39,7 +39,7 @@ const Navbar = () => {
       <nav className={styles.primaryMenu} ref={ref}>
         <section className={styles.navContainer}>
           <Link
-            to="Hero"
+            to="#Hero"
             className={styles.navTitle}
             activeClass={styles.selected}
           >
