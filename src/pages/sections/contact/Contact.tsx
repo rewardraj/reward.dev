@@ -11,107 +11,111 @@ import {
   publicKey,
   recaptchaKey,
 } from "../../../components/utils/credentials";
-import Form from "../../../components/utils/form";
+import FormProvider, { useForm } from "../../../context/useForm";
 import ReCAPTCHA from "react-google-recaptcha";
 
-const Contact = () => {
+const ContactForm = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
-
-  const { isSubmitting, showToast, form, sendEmail, refCaptcha } = Form(
-    serviceId,
-    contactFormTemplate,
-    publicKey
-  );
+  const { isSubmitting, showToast, toastMessage, form, sendEmail, refCaptcha } =
+    useForm();
 
   const handleToggle = (name: string) => {
     setOpenDropdown(openDropdown === name ? null : name);
   };
 
   return (
+    <div className={styles.formContainer}>
+      {showToast && toastMessage && (
+        <div className={`${styles.toast} ${styles[toastMessage.type]}`}>
+          <p>{toastMessage.message}</p>
+        </div>
+      )}
+      <form
+        className={styles.form}
+        ref={form}
+        onSubmit={sendEmail}
+        method="POST"
+        data-sitekey={recaptchaKey}
+      >
+        <Grid desktopColumns={2}>
+          <label htmlFor="user_name" className={styles.inputLabel}>
+            <input
+              type="text"
+              id="user_name"
+              placeholder="Name"
+              className={`${styles.input} ${styles.inputField}`}
+              required
+              name="user_name"
+            />
+          </label>
+          <label htmlFor="user_email">
+            <input
+              type="email"
+              id="user_email"
+              placeholder="Email"
+              className={`${styles.input} ${styles.inputField}`}
+              required
+              name="user_email"
+            />
+          </label>
+        </Grid>
+        <Grid desktopColumns={1} gridGap="20px">
+          <Dropdown
+            title="Subject"
+            options={[
+              "General Inquiry",
+              "Project Collaboration",
+              "Job Opportunity",
+              "Feedback",
+              "Other",
+            ]}
+            isOpen={openDropdown === "dropdown1"}
+            onToggle={() => handleToggle("dropdown1")}
+            onOptionSelected={setSelectedOption}
+          />
+          <input type="hidden" name="subject" value={selectedOption || ""} />
+        </Grid>
+        <Grid desktopColumns={1}>
+          <textarea
+            placeholder="Tell me more..."
+            rows={5}
+            name="message"
+            className={`${styles.textarea} ${styles.inputField}`}
+          ></textarea>
+        </Grid>
+        <div className={styles.recaptcha}>
+          <ReCAPTCHA
+            sitekey={recaptchaKey}
+            ref={refCaptcha}
+            data-size="normal"
+          />
+        </div>
+        <ButtonDefault
+          variant="primary"
+          className={styles.button}
+          disabled={isSubmitting}
+          aria-label="Send message"
+        >
+          Send
+        </ButtonDefault>
+      </form>
+    </div>
+  );
+};
+
+const Contact = () => {
+  return (
     <section id="Contact" className={styles.contact}>
       <Header title="Contact" />
       <Container>
-        {showToast && (
-          <div className={styles.toast}>
-            <p>Message sent successfully!</p>
-          </div>
-        )}
-        <div className={styles.formContainer}>
-          <form
-            className={styles.form}
-            ref={form}
-            onSubmit={sendEmail}
-            method="POST"
-            data-sitekey={recaptchaKey}
-          >
-            <Grid desktopColumns={2}>
-              <label htmlFor="user_name" className={styles.inputLabel}>
-                <input
-                  type="text"
-                  id="user_name"
-                  placeholder="Name"
-                  className={`${styles.input} ${styles.inputField}`}
-                  required
-                  name="user_name"
-                />
-              </label>
-              <label htmlFor="user_email">
-                <input
-                  type="email"
-                  id="user_email"
-                  placeholder="Email"
-                  className={`${styles.input} ${styles.inputField}`}
-                  required
-                  name="user_email"
-                />
-              </label>
-            </Grid>
-            <Grid desktopColumns={1} gridGap="20px">
-              <Dropdown
-                title="Subject"
-                options={[
-                  "General Inquiry",
-                  "Project Collaboration",
-                  "Job Opportunity",
-                  "Feedback",
-                  "Other",
-                ]}
-                isOpen={openDropdown === "dropdown1"}
-                onToggle={() => handleToggle("dropdown1")}
-                onOptionSelected={setSelectedOption}
-              />
-              <input
-                type="hidden"
-                name="subject"
-                value={selectedOption || ""}
-              />
-            </Grid>
-            <Grid desktopColumns={1}>
-              <textarea
-                placeholder="Tell me more..."
-                rows={5}
-                name="message"
-                className={`${styles.textarea} ${styles.inputField}`}
-              ></textarea>
-            </Grid>
-            <div className={styles.recaptcha}>
-              <ReCAPTCHA
-                sitekey={recaptchaKey}
-                ref={refCaptcha}
-                data-size="normal"
-              />
-            </div>
-            <ButtonDefault
-              variant="primary"
-              className={styles.button}
-              disabled={isSubmitting}
-              aria-label="Send message"
-            >
-              Send
-            </ButtonDefault>
-          </form>
-        </div>
+        <FormProvider
+          serviceId={serviceId}
+          templateId={contactFormTemplate}
+          publicKey={publicKey}
+        >
+          <ContactForm />
+        </FormProvider>
       </Container>
     </section>
   );
