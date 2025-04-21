@@ -9,16 +9,17 @@ import {
   serviceId,
   contactFormTemplate,
   publicKey,
-  recaptchaKey,
 } from "../../../components/utils/credentials";
-import FormProvider, { useForm } from "../../../context/useForm";
-import ReCAPTCHA from "react-google-recaptcha";
+import useForm from "../../../hooks/useForm";
 
 const ContactForm = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
-  const { isSubmitting, showToast, toastMessage, form, sendEmail, refCaptcha } =
-    useForm();
+  const { isSubmitting, showToast, toastMessage, form, sendEmail } = useForm(
+    serviceId,
+    contactFormTemplate,
+    publicKey
+  );
 
   const handleToggle = (name: string) => {
     setOpenDropdown(openDropdown === name ? null : name);
@@ -36,7 +37,6 @@ const ContactForm = () => {
         ref={form}
         onSubmit={sendEmail}
         method="POST"
-        data-sitekey={recaptchaKey}
       >
         <Grid desktopColumns={2}>
           <label htmlFor="user_name" className={styles.inputLabel}>
@@ -82,22 +82,16 @@ const ContactForm = () => {
             rows={5}
             name="message"
             className={`${styles.textarea} ${styles.inputField}`}
+            required
           ></textarea>
         </Grid>
-        <div className={styles.recaptcha}>
-          <ReCAPTCHA
-            sitekey={recaptchaKey}
-            ref={refCaptcha}
-            data-size="normal"
-          />
-        </div>
         <ButtonDefault
           variant="primary"
           className={styles.button}
           disabled={isSubmitting}
           aria-label="Send message"
         >
-          Send
+          {isSubmitting ? "Sending..." : "Send"}
         </ButtonDefault>
       </form>
     </div>
@@ -109,13 +103,7 @@ const Contact = () => {
     <section id="Contact" className={styles.contact}>
       <Header title="Contact" />
       <Container>
-        <FormProvider
-          serviceId={serviceId}
-          templateId={contactFormTemplate}
-          publicKey={publicKey}
-        >
-          <ContactForm />
-        </FormProvider>
+        <ContactForm />
       </Container>
     </section>
   );
