@@ -31,9 +31,9 @@
   --bg-primary-light: #f5fbf9;
   --bg-primary-tertiary: #f3fef8;
   --bg-secondary: #e7fafe;
-  --color-primary: #50b58b;
+  --color-primary: rgb(102, 242, 213);
   --logo-text: #199d6e;
-  --color-primary-light: #70cf82;
+  --color-primary-light: rgb(102, 242, 213);
   --color-primary-dark: #569249;
   --color-primary-yellow: #ffd500;
 
@@ -110,12 +110,9 @@
 html {
   font-size: 16px;
   line-height: normal;
-  font-family: "aileron", sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: var(--color-background-light);
   color: var(--color-text-primary);
-  // font-family: "classico-urw", "Inter", system-ui, -apple-system, "Segoe UI",
-  //   sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-  //   "Noto Color Emoji";
 }
 
 body {

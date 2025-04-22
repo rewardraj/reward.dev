@@ -9,17 +9,15 @@ import {
   serviceId,
   contactFormTemplate,
   publicKey,
+  recaptchaKey,
 } from "../../../components/utils/credentials";
-import useForm from "../../../hooks/useForm";
+import ReCAPTCHA from "react-google-recaptcha";
+import FormProvider, { useForm } from "../../../context/useForm";
 
 const ContactForm = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
-  const { isSubmitting, showToast, toastMessage, form, sendEmail } = useForm(
-    serviceId,
-    contactFormTemplate,
-    publicKey
-  );
+  const { sendEmail, form, refCaptcha, isSubmitting } = useForm();
 
   const handleToggle = (name: string) => {
     setOpenDropdown(openDropdown === name ? null : name);
@@ -27,16 +25,12 @@ const ContactForm = () => {
 
   return (
     <div className={styles.formContainer}>
-      {showToast && toastMessage && (
-        <div className={`${styles.toast} ${styles[toastMessage.type]}`}>
-          <p>{toastMessage.message}</p>
-        </div>
-      )}
       <form
         className={styles.form}
         ref={form}
         onSubmit={sendEmail}
         method="POST"
+        data-sitekey={recaptchaKey}
       >
         <Grid desktopColumns={2}>
           <label htmlFor="user_name" className={styles.inputLabel}>
@@ -72,9 +66,9 @@ const ContactForm = () => {
             ]}
             isOpen={openDropdown === "dropdown1"}
             onToggle={() => handleToggle("dropdown1")}
-            onOptionSelected={setSelectedOption}
+            onOptionSelected={setSelectedOption ?? ""}
           />
-          <input type="hidden" name="subject" value={selectedOption || ""} />
+          <input type="hidden" name="subject" value={selectedOption ?? ""} />
         </Grid>
         <Grid desktopColumns={1}>
           <textarea
@@ -82,16 +76,22 @@ const ContactForm = () => {
             rows={5}
             name="message"
             className={`${styles.textarea} ${styles.inputField}`}
-            required
           ></textarea>
         </Grid>
+        <div className={styles.recaptcha}>
+          <ReCAPTCHA
+            sitekey={recaptchaKey}
+            ref={refCaptcha}
+            data-size="normal"
+          />
+        </div>
         <ButtonDefault
           variant="primary"
           className={styles.button}
           disabled={isSubmitting}
           aria-label="Send message"
         >
-          {isSubmitting ? "Sending..." : "Send"}
+          Send
         </ButtonDefault>
       </form>
     </div>
@@ -103,7 +103,13 @@ const Contact = () => {
     <section id="Contact" className={styles.contact}>
       <Header title="Contact" />
       <Container>
-        <ContactForm />
+        <FormProvider
+          serviceId={serviceId}
+          templateId={contactFormTemplate}
+          publicKey={publicKey}
+        >
+          <ContactForm />
+        </FormProvider>
       </Container>
     </section>
   );

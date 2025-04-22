@@ -14,7 +14,7 @@
 
   span {
     font-weight: 700;
-    color: var(--color-primary-light);
+    color: rgb(102, 242, 213);
     font-size: 1.5rem;
   }
   p {
@@ -94,11 +94,5 @@
       font-weight: 500;
       outline: none;
     }
-
-    // &:hover {
-    //   background-color: var(--color-primary-light);
-    //   color: whitesmoke;
-    //   transition: all 0.3s ease-in-out;
-    // }
   }
 }
